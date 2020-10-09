@@ -12,11 +12,8 @@ public class MultiplicationTable {
 
         int year = 2020;
 
-        System.out.print(day);
-        System.out.print("/");
-        System.out.print(month);
-        System.out.print("/");
-        System.out.println(year);
+        System.out.println(day + "/" +  month + "/" + year );
+
 
         System.out.println();
 
