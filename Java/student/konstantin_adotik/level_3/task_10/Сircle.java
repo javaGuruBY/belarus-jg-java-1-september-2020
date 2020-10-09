@@ -14,17 +14,7 @@ public class Сircle {
 
         int year = 2020;
 
-        System.out.print(day);
-
-        System.out.print("/");
-
-        System.out.print(month);
-
-        System.out.print("/");
-
-        System.out.print(year);
-
-        System.out.println();
+        System.out.println(day + "/" +  month + "/" + year );
 
         System.out.println("Введите радиус окружности :");
 
