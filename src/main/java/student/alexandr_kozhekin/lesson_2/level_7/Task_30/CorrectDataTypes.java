@@ -1,4 +1,4 @@
-package student.alexandr_kozhekin.lesson_2.level_7.Task_29.Task_30;
+package student.alexandr_kozhekin.lesson_2.level_7.Task_30;
 
 public class CorrectDataTypes {
 
