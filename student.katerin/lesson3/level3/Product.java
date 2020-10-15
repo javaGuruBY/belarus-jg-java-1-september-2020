@@ -36,7 +36,7 @@ class ProductDemo {
         int i=0;
 
         while (i != 3) {
-            System.out.println("\n\n1)Show info\n2)Show new price\n3)Exit");
+            System.out.println("\n1)Show info\n2)Show new price\n3)Exit");
             Scanner in = new Scanner(System.in);
             System.out.print("Input a number: ");
             i = in.nextInt();
