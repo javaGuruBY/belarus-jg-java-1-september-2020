@@ -15,16 +15,20 @@ public class Dog {
     }
 
     void voice() {
-        System.out.println(name + " : Гав , Гав");
+        System.out.println(name +
+                " : Гав , Гав");
     }
 
     void eat() {
-        System.out.println(name + " : yammy!");
+        System.out.println(name +
+                " : yammy!");
     }
 
     void sleep() {
-        System.out.println(name + " : ZzZzZ");
+        System.out.println(name
+                + " : ZzZzZ");
     }
+
 
     void printInfo() {
         System.out.println(" Имя собаки : " + name );

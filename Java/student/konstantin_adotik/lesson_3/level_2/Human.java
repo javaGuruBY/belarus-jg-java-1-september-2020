@@ -10,7 +10,10 @@ public class Human {
 
     }
     void printInfo(){
-        System.out.println(" Hello . what is your name and how old are you? " );
+        System.out.println(" Hello !" +
+                " what is your name and how old are you? " );
+
     }
-    void greet() { System.out.println(" Hello ! My name is " + name + " I am 24 years ol " + age); }
+    void greet() { System.out.println(" Hello ! My name is "
+            + name + " I am 24 years old  " + age); }
 }
