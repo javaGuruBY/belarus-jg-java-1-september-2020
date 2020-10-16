@@ -11,15 +11,4 @@ public class Encoder {
     }
 }
 
-class EncoderDemo {
-    public static void main(String[] args) {
 
-        short code = 4;
-        char symbol = '*';
-
-        Encoder encoder = new Encoder();
-
-        encoder.encode(code);
-        encoder.decode(symbol);
-    }
-}

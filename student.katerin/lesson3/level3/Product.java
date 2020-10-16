@@ -10,8 +10,10 @@ public class Product {
     Product() {
     }
 
-    Product(String name) {
+    Product(String name, double regularPrice,double discount) {
         this.name = name;
+        this.regularPrice = regularPrice;
+        this.discount = discount;
     }
 
     double actualPrice() {
@@ -26,33 +28,6 @@ public class Product {
     }
 }
 
-class ProductDemo {
-    public static void main(String[] args) {
 
-        Product product1 = new Product("Toy");
-        product1.discount = 70;
-        product1.regularPrice = 150;
-
-        int i=0;
-
-        while (i != 3) {
-            System.out.println("\n1)Show info\n2)Show new price\n3)Exit");
-            Scanner in = new Scanner(System.in);
-            System.out.print("Input a number: ");
-            i = in.nextInt();
-
-            switch (i) {
-                case 1:
-                    product1.printInformation();
-                    break;
-                case 2:
-                    System.out.println("NewPrice:" + product1.actualPrice());
-                    break;
-                case 3:
-                    break;
-            }
-        }
-    }
-}
 
 

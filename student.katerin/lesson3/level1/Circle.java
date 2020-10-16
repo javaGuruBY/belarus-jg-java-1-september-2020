@@ -1,5 +1,7 @@
 package level1;
 
+import java.util.Scanner;
+
 public class Circle {
     public double radius;
 
@@ -17,11 +19,4 @@ public class Circle {
     }
 }
 
-class CircleDemo {
-    public static void main(String[] args) {
 
-        Circle firstCircle = new Circle(4.1435);
-        firstCircle.calculateArea();
-
-    }
-}
