@@ -6,15 +6,15 @@ public class NumberOrder {
 
         if (numberOne < numberTwo && numberOne < numberThere) {
 
-            System.out.println("Числв в порядке возвростания!");
+            System.out.println("Числа в порядке возвростания!");
 
         } else if (numberOne > numberTwo && numberOne > numberThere) {
 
-            System.out.println("Числв в порядке убывания!");
+            System.out.println("Числа в порядке убывания!");
 
         } else {
 
-            System.out.println("Числв не в порядке возвростания и не в порядке убывания!");
+            System.out.println("Числа не в порядке возвростания и не в порядке убывания!");
         }
     }
 }

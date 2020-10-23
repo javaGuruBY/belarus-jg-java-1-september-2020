@@ -6,7 +6,7 @@ public class EqualityOfThreeNumbers {
 
         if(numberOne == numberTwo && numberOne == numberThere) {
 
-            System.out.println("числа равны!");
+            System.out.println("Числа равны!");
 
         } else if (numberOne != numberTwo && numberOne != numberThere){
 
