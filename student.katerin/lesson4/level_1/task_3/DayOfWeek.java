@@ -10,6 +10,7 @@ public class DayOfWeek {
         this.dayOfWeek = dayOfWeek;
     }
 
+
     public String printDay(int dayOfWeek) {
         if (dayOfWeek==1)return "Monday";
         else if(dayOfWeek==2)return "Tuesday";
