@@ -8,7 +8,7 @@ public class EvenNumberDemo {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Введите целое число для вывода резулятата: ");
+        System.out.println("Введите целое число для вывода результата: ");
 
         EvenNumber.evenNumber(scanner.nextInt());
 
