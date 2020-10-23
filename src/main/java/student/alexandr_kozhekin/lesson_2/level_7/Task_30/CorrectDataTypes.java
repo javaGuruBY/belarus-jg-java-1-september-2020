@@ -14,5 +14,4 @@ public class CorrectDataTypes {
 
         System.out.println("Sum = " + sum);
     }
-
 }
