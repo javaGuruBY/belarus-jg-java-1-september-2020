@@ -1,4 +1,4 @@
-package Exercise1;
+package student.katerin.lesson4.Exercise1;
 
 public class SignComparator {
 

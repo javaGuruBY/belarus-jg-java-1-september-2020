@@ -1,4 +1,4 @@
-package level1;
+package student.katerin.lesson4.level1;
 
 public class LightColorDetector {
 
