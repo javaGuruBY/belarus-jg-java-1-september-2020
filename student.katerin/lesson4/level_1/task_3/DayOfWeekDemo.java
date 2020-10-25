@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class DayOfWeekDemo {
     public static void main(String[] args) {
 
+
         int flag = 0;
         while (flag == 0) {
             Scanner scanner = new Scanner(System.in);
