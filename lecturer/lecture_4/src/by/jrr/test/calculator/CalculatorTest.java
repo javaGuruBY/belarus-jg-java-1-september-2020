@@ -7,10 +7,16 @@ public class CalculatorTest {
     Calculator calculator = new Calculator();
 
     public void run() {
-        testSumming();
-        testSubtractionFirstScenario();
-        testSubtractionSecondScenario();
-        testSubtractionThirdScenario();
+//        testSumming();
+//        testSubtractionFirstScenario();
+//        testSubtractionSecondScenario();
+//        testSubtractionThirdScenario();
+        maxShouldReturnFirst();
+        maxShouldReturnSecond();
+        maxShouldReturnThird();
+        maxShouldReturnFirstOrSecond();
+        maxShouldReturnAny();
+
 
     }
 
@@ -66,6 +72,66 @@ public class CalculatorTest {
         }
     }
 
+    public void maxShouldReturnFirst() {
+        int a = 7, b = 6, c = 5;
+        int expected = 7;
+
+        int actual = calculator.max(a, b, c);
+        if(expected == actual) {
+            testPassed("maxShouldReturnFirst");
+        } else {
+            testFailedForMaxOfThree(a, b, c, expected, actual);
+        }
+    }
+
+    public void maxShouldReturnThird() {
+        int a = 5, b = 6, c = 7;
+        int expected = 7;
+
+        int actual = calculator.max(a, b, c);
+        if(expected == actual) {
+            testPassed("maxShouldReturnThird");
+        } else {
+            testFailedForMaxOfThree(a, b, c, expected, actual);
+        }
+    }
+
+    public void maxShouldReturnFirstOrSecond() {
+        int a = 7, b = 7, c = 5;
+        int expected = 7;
+
+        int actual = calculator.max(a, b, c);
+        if(expected == actual) {
+            testPassed("maxShouldReturnFirstOrSecond");
+        } else {
+            testFailedForMaxOfThree(a, b, c, expected, actual);
+        }
+    }
+
+    public void maxShouldReturnAny() {
+        int a = 7, b = 7, c = 7;
+        int expected = 7;
+
+        int actual = calculator.max(a, b, c);
+        if(expected == actual) {
+            testPassed("maxShouldReturnAny");
+        } else {
+            testFailedForMaxOfThree(a, b, c, expected, actual);
+        }
+    }
+
+    public void maxShouldReturnSecond() {
+        int a = 6, b = 7, c = 5;
+        int expected = 7;
+
+        int actual = calculator.max(a, b, c);
+        if(expected == actual) {
+            testPassed("maxShouldReturnSecond");
+        } else {
+            testFailedForMaxOfThree(a, b, c, expected, actual);
+        }
+    }
+
 
     private void testPassed(String message) {
         System.out.println("\u001B[32m  "+ message +" passed successfully \u001B[0m");
@@ -76,6 +142,16 @@ public class CalculatorTest {
                 "\n\ttest failed: " +
                 "\nfor left \t"+left+" " +
                 "\nand right \t"+right+" " +
+                "\nexpected \t"+expected+" " +
+                "\nbut got \t"+actual);
+    }
+
+    private void testFailedForMaxOfThree(int a, int b, int c, int expected, int actual) {
+        throw new RuntimeException("" +
+                "\n\ttest failed: " +
+                "\nfor a \t"+a+" " +
+                "\nand b \t"+b+" " +
+                "\nand c \t"+c+" " +
                 "\nexpected \t"+expected+" " +
                 "\nbut got \t"+actual);
     }
