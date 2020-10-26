@@ -1,4 +1,4 @@
-package student.katerin.lesson4.level3.task_9;
+package student_katerin.lesson4.level3.task_9;
 
 public class CompareThreeNumbers {
     public int firstNum;

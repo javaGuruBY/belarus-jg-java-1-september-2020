@@ -1,4 +1,4 @@
-package student.katerin.lesson4.level_1.task_3;
+package student_katerin.lesson4.level_1.task_3;
 
 public class DayOfWeek {
     public int dayOfWeek;
