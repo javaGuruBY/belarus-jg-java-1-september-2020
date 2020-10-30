@@ -1,4 +1,4 @@
-package student.alexandr_kozhekin.lesson_5.Task_12;
+package student.alexandr_kozhekin.lesson_5.level_2_intern.Task_12;
 
 public class RandomNumInArray {
     public static void main(String[] args) {
