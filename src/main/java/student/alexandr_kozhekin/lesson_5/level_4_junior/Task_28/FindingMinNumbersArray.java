@@ -1,8 +1,8 @@
 package student.alexandr_kozhekin.lesson_5.level_4_junior.Task_28;
 
-import java.util.Scanner;
-
 import static student.alexandr_kozhekin.lesson_5.level_4_junior.Task_28.ArrayMinSort.arrayMinSort;
+
+import java.util.Scanner;
 
 public class FindingMinNumbersArray {
     public static void main(String[] args) {

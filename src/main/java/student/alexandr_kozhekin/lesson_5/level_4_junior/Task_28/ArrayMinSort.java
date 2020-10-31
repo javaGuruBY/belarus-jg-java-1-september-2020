@@ -24,7 +24,7 @@ public class ArrayMinSort {
 
         }
 
-        System.out.println("\n" + "Минимальное значение в массиве: " +  array[0]);
+        System.out.println("\n"  +  "Минимальное значение в массиве: " +  array[0]);
 
     }
 }
