@@ -1,6 +1,6 @@
 package student.alexandr_kozhekin.lesson_5.level_4_junior.Task_27;
 
-import static student.alexandr_kozhekin.lesson_5.level_4_junior.Task_27.ArraySort.arrayMaxSort;
+import static student.alexandr_kozhekin.lesson_5.level_4_junior.Task_27.ArrayMaxSort.arrayMaxSort;
 
 import java.util.Scanner;
 

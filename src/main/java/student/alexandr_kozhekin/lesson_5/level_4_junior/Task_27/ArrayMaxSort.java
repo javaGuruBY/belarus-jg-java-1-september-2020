@@ -1,6 +1,6 @@
 package student.alexandr_kozhekin.lesson_5.level_4_junior.Task_27;
 
-public class ArraySort {
+public class ArrayMaxSort {
 
     public static void arrayMaxSort (int[] array) {
 
@@ -24,7 +24,7 @@ public class ArraySort {
 
         }
 
-        System.out.println("\n" + "Максимальное число массива: " +  array[0]);
+        System.out.println("\n" + "Максимальное значение в массиве: " +  array[0]);
 
     }
 }
