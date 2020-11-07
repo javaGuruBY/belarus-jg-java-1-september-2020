@@ -11,8 +11,6 @@ public class WordService {
 
         String[] ar = text.split(" ");
 
-        Arrays.sort(ar);
-
         System.out.println(Arrays.toString(ar));
 
         int max = 0;
