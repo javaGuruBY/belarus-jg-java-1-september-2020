@@ -2,68 +2,39 @@ package student.alexandr_kozhekin.lesson_7.level_1_intern.Task_1;
 
 public class WordService {
 
-    private static String [] newlineToArrayOfStrings(String text) {
+    private static String[] makeArrayStrings(String text) {
 
-        int cellNumberOfStringArray = 0;
-        int characterСounter = 0;
-//проблемма с длинной массива charString (добавляются null ячейки + добавляются пробелы не очень страшно) нужно отрегулировать
-        String charString [] = new String[(text.length())];
-        char charText [] = new char[text.length()];
+        String word [] = text.split(" ");
 
-        for (int i = 0; i < text.length(); i++) {
-
-            if (text.charAt(i) != 32
-                    && text.charAt(i) != 46
-                    && text.charAt(i) != 33
-                    && text.charAt(i) != 63
-                    && text.charAt(i) != 44) {
-//добавление в массив символов
-                characterСounter++;
-                charText[i] = text.charAt(i);
-
-            } else {
-//добавление в массив строк символов
-                charString[cellNumberOfStringArray] = new String(charText);
-//удаление ненужных символов
-                for (int q = 0; q < characterСounter; q++) {
-
-                    charText[q] = 0;
-
-                }
-
-                characterСounter++;
-                cellNumberOfStringArray++;
-            }
-        }
-
-        return charString;
+        return word;
     }
 
     public String findMostFrequentWord(String text) {
 
-        newlineToArrayOfStrings(text);
+        makeArrayStrings(text);
 
         int max = 0;
+        int count = 1;
         String word = "";
+        String curr = "";
 
-        for (int i = 0; i < newlineToArrayOfStrings(text).length; i++){
+        for (int i = 0; i < makeArrayStrings(text).length; i++) {
 
-            String wordNumOne = newlineToArrayOfStrings(text)[i];
+            String wordNumOne = makeArrayStrings(text)[i];
 
-            for (int q = i + 1; q < newlineToArrayOfStrings(text).length; q++){
+            for (int q = i + 1; q < makeArrayStrings(text).length; q++) {
 
-                String wordNamTho = newlineToArrayOfStrings(text)[q];
+                String wordNumTho = makeArrayStrings(text)[q];
 
-                if (wordNumOne == wordNamTho){
+                if (wordNumOne.equalsIgnoreCase(wordNumTho)) {
 
-                    word = newlineToArrayOfStrings(text)[i];
+                    word = wordNumOne;
                     max++;
 
-                } else {
-
-                    q++;
-
                 }
+            }
+            if (max > count) {
+                word = wordNumOne;
             }
         }
 
