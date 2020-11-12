@@ -16,11 +16,11 @@ public class WordService {
         int max = 0;
         int count = 1;
         String word = "";
-        String curr = "";
 
         for (int i = 0; i < makeArrayStrings(text).length; i++) {
 
             String wordNumOne = makeArrayStrings(text)[i];
+            count = 1;
 
             for (int q = i + 1; q < makeArrayStrings(text).length; q++) {
 
@@ -28,13 +28,16 @@ public class WordService {
 
                 if (wordNumOne.equalsIgnoreCase(wordNumTho)) {
 
-                    word = wordNumOne;
-                    max++;
+                    count++;
 
                 }
-            }
-            if (max > count) {
-                word = wordNumOne;
+
+                if (count > max){
+
+                    word = wordNumOne;
+                    max = count;
+
+                }
             }
         }
 

@@ -6,7 +6,7 @@ public class WordServiceDemo {
 
         WordService wordService = new WordService();
 
-        String q = "Чтобы обнаружить Чтобы повторяющегося  обнаружить Чтобы  Чтобы";
+        String q = "Чтобы обнаружить повторяющегося обнаружить Чтобы повторяющегося повторяющегося";
 
         wordService.findMostFrequentWord(q);
     }
