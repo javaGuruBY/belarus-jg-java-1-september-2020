@@ -26,7 +26,7 @@ public class WordService {
                 max = count;
             }
         }
-        System.out.println("Number:" + max);
+        //System.out.println("Number:" + max);
         return maxString;
     }
 }
