@@ -19,6 +19,7 @@ public class ArrayCopy {
         System.out.print("Enter size of array:");
         int size = in.nextInt();
         int[] array = new int[size];
+
         for (int i = 0; i < array.length; i++) {
             System.out.print("array[" + (i + 1) + "]=");
             array[i] = in.nextInt();

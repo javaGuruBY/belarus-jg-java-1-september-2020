@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class ArrayCopyTest {
     public static void main(String[] args) {
+
         ArrayCopyTest array = new ArrayCopyTest();
         array.test1();
         array.test2();
