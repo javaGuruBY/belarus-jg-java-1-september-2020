@@ -95,7 +95,7 @@ public class CardServis {
         }
     }
 
-    private static void cardInfo(CreditCard creditCard){
+    public static void cardInfo(CreditCard creditCard){
 
         System.out.println("Ваш баланс: " + creditCard.getCardBalance() + " RUB" + "\n"
                 + "Задолжность по кредиту составляет: " + creditCard.getCardLoanDebt() + " RUB");
