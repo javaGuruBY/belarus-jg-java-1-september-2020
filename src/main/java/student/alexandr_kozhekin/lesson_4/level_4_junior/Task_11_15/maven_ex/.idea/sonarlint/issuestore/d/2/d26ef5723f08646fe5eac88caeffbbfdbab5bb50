@@ -1,5 +1,0 @@
-
-n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(öÊÛ`
-ä
-java:S1598"ÎThis file "CalculatorDemo.java" should be located in "student/alexandr_kozhekin/lesson_4/level_4_junior/Task_11_15/Calculator" directory, not in "/Users/alexandrkozhekin/Documents/IntaliIDEA/belarus-jg-java-1-september-2020/src/main/java/student/alexandr_kozhekin/lesson_4/level_4_junior/Task_11_15/maven_ex/src/main/java/Calculator".(öÊÛ`
-S	java:S1060"9Replace this use of System.out or System.err by a logger.(Ê†‹ùÿÿÿÿ
