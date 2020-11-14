@@ -3,7 +3,7 @@ package student.alexandr_kozhekin.lesson_4.level_4_junior.Task_11_15.Calculator.
 import student.alexandr_kozhekin.lesson_4.level_4_junior.Task_11_15.Calculator.Application.Calculator;
 
 public class CalculatorTest {
-    public static void main(String[] args) {
+    public static void main(String [] args) {
 
         CalculatorTest calculatorTest = new CalculatorTest();
 

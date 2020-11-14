@@ -1,10 +1,10 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(óáˆ
-ù
-java:S1598"âThis file "Calculator.java" should be located in "student/alexandr_kozhekin/lesson_4/level_4_junior/Task_11_15/Calculator/Application" directory, not in "/Users/alexandrkozhekin/Documents/IntaliIDEA/belarus-jg-java-1-september-2020/src/main/java/student/alexandr_kozhekin/lesson_4/level_4_junior/Task_11_15/maven_ex/src/main/java/Calculator/Application".(óáˆ
-œ
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÄŸÒ­üÿÿÿÿ
-8
-java:S1118"Hide this public constructor.(ÄŸÒ­üÿÿÿÿ
 \
-java:S1126"AReplace this if-then-else statement by a single return statement.(¹Ê„Šüÿÿÿÿ
+java:S1126 "AReplace this if-then-else statement by a single return statement.(¹Ê„Šüÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì†¬¸şÿÿÿÿ
+8
+java:S1118"Hide this public constructor.(ÄŸÒ­üÿÿÿÿ
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÄŸÒ­üÿÿÿÿ
+K
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8ä§é—Ü.

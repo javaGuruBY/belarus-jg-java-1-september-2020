@@ -1,12 +1,12 @@
 
-b
-java:S1192"NDefine a constant instead of duplicating this literal "\nexpected \t" 3 times.(áæå×
-^	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‹­”Úúÿÿÿÿ
-l	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ëš
-^	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‹­”Úúÿÿÿÿ
+h	java:S112î"FDefine and throw a dedicated exception instead of using a generic one.(‹­”Úúÿÿÿÿ8’ïÜ.
 k
-java:S1192"RDefine a constant instead of duplicating this literal "\n\ttest failed: " 3 times.(”ö¯úÿÿÿÿ
-^	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‹­”Úúÿÿÿÿ
-a
-java:S1192"MDefine a constant instead of duplicating this literal "\nbut got \t" 3 times.(¾Ğ¶«
-L	java:S106"9Replace this use of System.out or System.err by a logger.(·Ø§‡
+java:S1192ô"MDefine a constant instead of duplicating this literal "\nbut got \t" 3 times.(¾Ğ¶«8’ïÜ.
+h	java:S112ø"FDefine and throw a dedicated exception instead of using a generic one.(‹­”Úúÿÿÿÿ8’ïÜ.
+V	java:S106ê"9Replace this use of System.out or System.err by a logger.(·Ø§‡8’ïÜ.
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‹­”Úúÿÿÿÿ8’ïÜ.
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ëš8’ïÜ.
+l
+java:S1192ó"NDefine a constant instead of duplicating this literal "\nexpected \t" 3 times.(áæå×8’ïÜ.
+u
+java:S1192ï"RDefine a constant instead of duplicating this literal "\n\ttest failed: " 3 times.(”ö¯úÿÿÿÿ8’ïÜ.

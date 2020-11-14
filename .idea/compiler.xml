@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="belarus-jg-java-1-september-2020" target="1.5" />
+      <module name="belarus-jg-java-1-september-2020" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>

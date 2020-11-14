@@ -7,3 +7,5 @@ a
 ,src/main/java/Calculator/CalculatorDemo.java,d/2/d26ef5723f08646fe5eac88caeffbbfdbab5bb50
 d
 4src/main/java/Calculator/Application/Calculator.java,7/7/7734c1e23f4212d26585940ebec8cef8889ff486
+h
+8src/test/java/Calculator/Application/CalculatorTest.java,b/d/bd9ca19edf568578f35547735d350a59b258fc53

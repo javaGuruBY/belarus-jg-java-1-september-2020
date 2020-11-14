@@ -1,6 +1,6 @@
 package Calculator.Test;
 
-import Calculator.Application.Calculator;
+import Calculator.Application.Calculator1;
 
 public class CalculatorTest {
     public static void main(String[] args) {
@@ -27,7 +27,7 @@ public class CalculatorTest {
         int secondNumber = 5;
         int expectedResult = 15;
 
-        int result = Calculator.sum(firstNumber, secondNumber);
+        int result = Calculator1.sum(firstNumber, secondNumber);
 
         if (result == expectedResult) {
 
@@ -46,7 +46,7 @@ public class CalculatorTest {
         int expectedResult = 5;
 
 
-        int result = Calculator.subtraction(firstNumber, secondNumber);
+        int result = Calculator1.subtraction(firstNumber, secondNumber);
 
         if (result == expectedResult) {
 
@@ -64,7 +64,7 @@ public class CalculatorTest {
         int secondNumber = 5;
         int expectedResult = 50;
 
-        int result = Calculator.multiply(firstNumber, secondNumber);
+        int result = Calculator1.multiply(firstNumber, secondNumber);
 
         if (result == expectedResult) {
 
@@ -82,7 +82,7 @@ public class CalculatorTest {
         int secondNumber = 2;
         int expectedResult = 5;
 
-        int result = Calculator.division(firstNumber, secondNumber);
+        int result = Calculator1.division(firstNumber, secondNumber);
 
         if (result == expectedResult) {
 
@@ -99,7 +99,7 @@ public class CalculatorTest {
         int firstNumber = 2;
         boolean flag = true;
 
-        boolean resultOne = Calculator.isEven(firstNumber);
+        boolean resultOne = Calculator1.isEven(firstNumber);
 
         if (resultOne == flag) {
 
@@ -116,7 +116,7 @@ public class CalculatorTest {
         int firstNumber = 1;
         boolean flag = true;
 
-        boolean resultOne = Calculator.isEven(firstNumber);
+        boolean resultOne = Calculator1.isEven(firstNumber);
 
         if (resultOne != flag) {
 
@@ -134,7 +134,7 @@ public class CalculatorTest {
         int secondNumber = 5;
         int expectedResult = 10;
 
-        int result = Calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        int result = Calculator1.maxOfTwoNumbers(firstNumber, secondNumber);
 
         if (result == expectedResult) {
 
@@ -152,7 +152,7 @@ public class CalculatorTest {
         int secondNumber = 10;
         int expectedResult = 10;
 
-        int result = Calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        int result = Calculator1.maxOfTwoNumbers(firstNumber, secondNumber);
 
         if (result == expectedResult) {
 
@@ -170,7 +170,7 @@ public class CalculatorTest {
         int secondNumber = 5;
         int expectedResult = 5;
 
-        int result = Calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        int result = Calculator1.maxOfTwoNumbers(firstNumber, secondNumber);
 
         if (result == expectedResult) {
 
@@ -189,7 +189,7 @@ public class CalculatorTest {
         int threeNumTest = 1;
         int expectedResult = 3;
 
-        int result = Calculator.maxOfThreeNumber(firstNumTest, secondNumTest, threeNumTest);
+        int result = Calculator1.maxOfThreeNumber(firstNumTest, secondNumTest, threeNumTest);
 
         if (result == expectedResult){
             testPassed("First number out of three test");
@@ -205,7 +205,7 @@ public class CalculatorTest {
         int threeNumTest = 3;
         int expectedResult = 12;
 
-        int result = Calculator.maxOfThreeNumber(firstNumTest, secondNumTest, threeNumTest);
+        int result = Calculator1.maxOfThreeNumber(firstNumTest, secondNumTest, threeNumTest);
 
         if (result == expectedResult){
             testPassed("Second number out of three test");
@@ -221,7 +221,7 @@ public class CalculatorTest {
         int threeNumTest = 10;
         int expectedResult = 10;
 
-        int result = Calculator.maxOfThreeNumber(firstNumTest, secondNumTest, threeNumTest);
+        int result = Calculator1.maxOfThreeNumber(firstNumTest, secondNumTest, threeNumTest);
 
         if (result == expectedResult){
             testPassed("Three number out of three test");
