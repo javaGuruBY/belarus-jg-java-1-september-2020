@@ -7,8 +7,8 @@ public class CreditCard {
     private int cardNum;
     private int cardPin;
     private int cardBalance;
-    private int cardCreditLimit;  // кредитный лимит
-    private int cardLoanDebt;    // задолжность по кредиту
+    private int cardCreditLimit;
+    private int cardLoanDebt;
 
     public CreditCard(int cardNum, int cardPin) {
         this.cardNum = cardNum;
