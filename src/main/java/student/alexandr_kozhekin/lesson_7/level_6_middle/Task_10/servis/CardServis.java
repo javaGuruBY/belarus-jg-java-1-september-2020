@@ -1,6 +1,6 @@
-package student.alexandr_kozhekin.lesson_7.level_6_middle.servis;
+package student.alexandr_kozhekin.lesson_7.level_6_middle.Task_10.servis;
 
-import student.alexandr_kozhekin.lesson_7.level_6_middle.bean.CreditCard;
+import student.alexandr_kozhekin.lesson_7.level_6_middle.Task_10.bean.CreditCard;
 import java.util.Scanner;
 
 public class CardServis {
@@ -45,6 +45,7 @@ public class CardServis {
         } else if (pinCard != creditCard.getCardPin()){
 
             System.out.println("Операция отклонена!");
+
         }
     }
 
@@ -78,6 +79,7 @@ public class CardServis {
                     creditCard.setCardLoanDebt(cardReplenishment);
 
                     cardInfo(creditCard);
+
                 }
 
         } else if (creditCard.getCardLoanDebt() == 0) {
@@ -88,6 +90,7 @@ public class CardServis {
 
                 cardInfo(creditCard);
             }
+
         } else {
 
             System.out.println("Операция отклонена!");

@@ -1,11 +1,11 @@
-package student.alexandr_kozhekin.lesson_7.level_6_middle.servis;
+package student.alexandr_kozhekin.lesson_7.level_6_middle.Task_10.servis;
 
-import student.alexandr_kozhekin.lesson_7.level_6_middle.bean.CreditCard;
+import student.alexandr_kozhekin.lesson_7.level_6_middle.Task_10.bean.CreditCard;
 import java.util.Scanner;
 
 public class Menu {
 
-    public static void menu (CardServis cardServis, CreditCard creditCard){
+    public static void menu ( CreditCard creditCard){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Выберите операцию: " + "\n"
@@ -20,24 +20,24 @@ public class Menu {
                 case 1:
                     System.out.println("Операция № 1 - Баланс карты");
                     CardServis.cardInfo(creditCard);
-                    menu(cardServis, creditCard);
+                    menu(creditCard);
                     break;
                 case 2:
                     System.out.println("Операция № 2 - снятие денег с карты");
                     CardServis.deposit(creditCard);
-                    menu(cardServis, creditCard);
+                    menu(creditCard);
                     break;
                 case 3:
                     System.out.println("Операция № 3 - пополнение карты");
                     CardServis.withdraw(creditCard);
-                    menu(cardServis, creditCard);
+                    menu(creditCard);
                     break;
                 case 4:
                     System.out.println("Выход!");
                     break;
                 default:
                     System.out.println("Выберите нужную операцию!");
-                    menu(cardServis, creditCard);
+                    menu(creditCard);
                     break;
             }
     }
