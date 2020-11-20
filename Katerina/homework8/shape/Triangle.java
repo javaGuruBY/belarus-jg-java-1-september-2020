@@ -1,4 +1,4 @@
-package level2_3;
+package shape;
 
 public class Triangle extends Shape {
 

@@ -1,6 +1,6 @@
-package level2_3;
+package shape;
 
-abstract class Shape {
+public abstract class Shape {
 
     private String title;
 

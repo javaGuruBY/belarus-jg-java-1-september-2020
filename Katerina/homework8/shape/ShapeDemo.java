@@ -1,4 +1,4 @@
-package level2_3;
+package shape;
 
 public class ShapeDemo {
     public static void main(String[] args) {
