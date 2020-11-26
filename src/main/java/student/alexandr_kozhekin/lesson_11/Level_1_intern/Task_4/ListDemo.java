@@ -23,9 +23,9 @@ public class ListDemo {
 
         }
 
-        for (int num2 : linkedList) {
+        for (int num : linkedList) {
 
-            System.out.println("linkedList - " + linkedList.get(num2));
+            System.out.println("linkedList - " + linkedList.get(num));
 
         }
         //реализации интерфейса java.util.List могут хранить одинаковые элементы (дубликаты)
