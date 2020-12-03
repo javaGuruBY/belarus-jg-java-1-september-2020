@@ -5,12 +5,12 @@ public class BookDemo {
 
         BookDatabaseImpl bookDatabaseImpl = new BookDatabaseImpl();
 
-        Book book1 = new Book("A1", "T1");
-        Book book2 = new Book("A2", "T2");
-        Book book3 = new Book("A3", "T3");
-        Book book4 = new Book("A4", "T4");
-        Book book5 = new Book("A5", "T5");
-        Book book6 = new Book("A6", "T6");
+        Book book1 = new Book("A2", "T1");
+        Book book2 = new Book("A1", "T2");
+        Book book3 = new Book("A1", "T3");
+        Book book4 = new Book("A1", "T4");
+        Book book5 = new Book("A1", "T2");
+        Book book6 = new Book("A2", "T6");
 
         bookDatabaseImpl.save(book1);
         bookDatabaseImpl.save(book2);
@@ -22,16 +22,14 @@ public class BookDemo {
 
         System.out.println(bookDatabaseImpl.books);
         System.out.println(bookDatabaseImpl.bookID);
-
-        System.out.println(bookDatabaseImpl.deleteBook(book3));
-
+        System.out.println(bookDatabaseImpl.countAllBooks());
+        bookDatabaseImpl.deleteByTitle("T2");
+        System.out.println(bookDatabaseImpl.countAllBooks());
         System.out.println(bookDatabaseImpl.books);
         System.out.println(bookDatabaseImpl.bookID);
 
-        System.out.println(bookDatabaseImpl.deleteBook(2L));
-
-        System.out.println(bookDatabaseImpl.books);
-        System.out.println(bookDatabaseImpl.bookID);
+//        System.out.println(bookDatabaseImpl.findById(6L));
+//        System.out.println(bookDatabaseImpl.countAllBooks());
 
     }
 }

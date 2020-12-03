@@ -73,8 +73,8 @@ public class BookDatabaseImpl implements BookDatabase {
 
     @Override
     public Optional<Book> findById(Long bookId) {
-
-        return !books.isEmpty() ? Optional.of(books.get(Math.toIntExact(bookId))) : Optional.empty();
+//исправлен метод (добавлено - 1)
+        return !books.isEmpty() ? Optional.of(books.get(Math.toIntExact(bookId) - 1)) : Optional.empty();
 
     }
 
@@ -114,4 +114,39 @@ public class BookDatabaseImpl implements BookDatabase {
         return books.size();
 
     }
+
+    @Override
+    public void deleteByAuthor(String author) {
+
+        for (int i = 0; i < books.size(); ) {
+
+            if (books.get(Math.toIntExact(i)).getAuthor().equals(author)) {
+
+                deleteBook(books.get(i));
+
+            } else {
+
+                i++;
+
+            }
+        }
+    }
+
+    @Override
+    public void deleteByTitle(String title) {
+
+        for (int i = 0; i < books.size(); ) {
+
+            if (books.get(Math.toIntExact(i)).getTitle().equals(title)) {
+
+                deleteBook(books.get(i));
+
+            } else {
+
+                i++;
+
+            }
+        }
+    }
+
 }
