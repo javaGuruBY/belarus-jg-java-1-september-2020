@@ -1,14 +1,15 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Main;
 
 import java.util.Objects;
 
-class Book {
+public class Book {
 
     private Long id;
     private String title;
     private String author;
+    private String yearOfIssue;
 
-    Book(String author, String title) {
+    public Book(String author, String title) {
 
         this.author = author;
         this.title = title;
@@ -39,19 +40,23 @@ class Book {
 
     }
 
+    public String getYearOfIssue() {
+
+        return yearOfIssue;
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return id == book.id &&
-                Objects.equals(title, book.title) &&
-                Objects.equals(author, book.author);
+        return Objects.equals(title, book.title);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, author);
+        return Objects.hash(title);
     }
 
     @Override
@@ -60,6 +65,7 @@ class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
+                ", yearOfIssue='" + yearOfIssue + '\'' +
                 '}';
     }
 
