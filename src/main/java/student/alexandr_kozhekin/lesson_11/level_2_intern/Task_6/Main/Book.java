@@ -46,6 +46,12 @@ public class Book {
 
     }
 
+    public void setYearOfIssue(String yearOfIssue) {
+
+        this.yearOfIssue = yearOfIssue;
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

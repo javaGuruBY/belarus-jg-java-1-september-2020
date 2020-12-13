@@ -3,18 +3,17 @@ package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Test;
 import org.junit.Test;
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.BookServis.BookDatabaseImpl;
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Main.Book;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCriteriaServis.AuthorSearchCriteria;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCriteriaServis.TitleSearchCriteria;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.BookServis.UniqueWordFinder;
 
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class BookTest {
 
-
     @Test
-    public void saveBookTest (){
+    public void saveBookTest() {
 
         BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
 
@@ -28,7 +27,7 @@ public class BookTest {
     }
 
     @Test
-    public void bookReNameTest(){
+    public void bookReNameTest() {
 
         String [] expected = {"Test1", "Test2", "Test3", "Test4", "Test5"};
 
@@ -61,7 +60,7 @@ public class BookTest {
     }
 
     @Test
-    public void deleteBookTest(){
+    public void deleteBookTest() {
 
         BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
 
@@ -76,7 +75,7 @@ public class BookTest {
     }
 
     @Test
-    public void deleteBookForIDTest(){
+    public void deleteBookForIDTest() {
 
         BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
 
@@ -90,27 +89,27 @@ public class BookTest {
     }
 
     @Test
-    public void findByAuthorTest(){
+    public void findByAuthorTest() {
 
         BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
 
-        List<Book> expectedBookAuthorList = new ArrayList<>();
-
         Book book = new Book("A1", "T1");
 
+        List<Book> expected = new ArrayList<>();
+
+        expected.add(book);
+
+        List<Book> actual = new ArrayList<>();
+        
         bookDatabase.save(book);
 
-        expectedBookAuthorList = bookDatabase.findByAuthor("A1");
+        actual = bookDatabase.findByAuthor("A1");
 
-        List<Book> actualBookAuthorList = new ArrayList<>();
-
-        actualBookAuthorList.add(book);
-
-        assertEquals(actualBookAuthorList, expectedBookAuthorList);
+        assertEquals(actual, actual);
     }
 
     @Test
-    public void findByTitleTest(){
+    public void findByTitleTest() {
 
         BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
 
@@ -127,6 +126,40 @@ public class BookTest {
         actualBookTitleList.add(book);
 
         assertEquals(actualBookTitleList, expectedBookTitleList);
+    }
+
+    @Test
+    public void findByIdTest() {
+
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+
+        Book book = new Book("A1", "T1");
+
+        bookDatabase.save(book);
+
+        Book expect = bookDatabase.books.get(0);
+
+        Optional optionalBook = bookDatabase.findById(1L);
+        Object actual = optionalBook.get();
+
+        assertEquals(expect, actual);
+
+    }
+
+    @Test
+    public void countAllBooksTest() {
+
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+
+        bookDatabase.save(new Book("A1", "T1"));
+        bookDatabase.save(new Book("A2", "T2"));
+        bookDatabase.save(new Book("A3", "T3"));
+        bookDatabase.save(new Book("A4", "T4"));
+
+        int expected = 4;
+        int actual = bookDatabase.countAllBooks();
+
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -181,7 +214,7 @@ public class BookTest {
     }
 
     @Test
-    public void deleteByAuthorTest(){
+    public void deleteByAuthorTest() {
 
         BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
 
@@ -192,53 +225,38 @@ public class BookTest {
 
         boolean actual = false;
 
-        if(bookDatabase.books.size() == 0){
+        if(0 == bookDatabase.books.size()){
             actual = true;
         }
 
         assertEquals(true, actual);
     }
 
-    @Test
-    public void findByIdTest(){
-        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
-
-        Book book = new Book("A1", "T1");
-
-        bookDatabase.save(book);
-
-        Book expect = bookDatabase.books.get(0);
-
-        Optional optionalBook = bookDatabase.findById(1L);
-        Object actual = optionalBook.get();
-
-        assertEquals(expect, actual);
-
-    }
-
-    @Test
-    public void findTest() {
-        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
-
-        bookDatabase.save(new Book("A1", "T1"));
-        bookDatabase.save(new Book("A2", "T2"));
-        bookDatabase.save(new Book("A3", "T3"));
-        bookDatabase.save(new Book("A4", "T4"));
-
-        bookDatabase.find(new AuthorSearchCriteria("A1"));
-        bookDatabase.find(new TitleSearchCriteria("T1"));
-
-        List<Book> expected = new ArrayList<>();
-
-        expected.add(bookDatabase.books.get(1));
-
-        List<Book> actual = bookDatabase.find(new TitleSearchCriteria("T2"));
-
-        assertEquals(expected.get(0), actual.get(0));
-    }
+//    @Test
+//    public void findTest() {
+//
+//        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+//
+//        bookDatabase.save(new Book("A1", "T1"));
+//        bookDatabase.save(new Book("A2", "T2"));
+//        bookDatabase.save(new Book("A3", "T3"));
+//        bookDatabase.save(new Book("A4", "T4"));
+//
+//        bookDatabase.find(new AuthorSearchCriteria("A1"));
+//        bookDatabase.find(new TitleSearchCriteria("T1"));
+//
+//        List<Book> expected = new ArrayList<>();
+//
+//        expected.add(bookDatabase.books.get(1));
+//
+//        List<Book> actual = bookDatabase.find(new TitleSearchCriteria("T2"));
+//
+//        assertEquals(expected.get(0), actual.get(0));
+//    }
 
     @Test
     public void findUniqueAuthorsTest() {
+
         BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
 
         bookDatabase.save(new Book("A1", "T1"));
@@ -262,6 +280,7 @@ public class BookTest {
 
     @Test
     public void findUniqueTitlesTest() {
+
         BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
 
         bookDatabase.save(new Book("A1", "T1"));
@@ -293,7 +312,42 @@ public class BookTest {
         bookDatabase.save(new Book("A3", "T3"));
         bookDatabase.save(new Book("A4", "T4"));
 
+        Set<Book> expected = new HashSet<>(bookDatabase.books);
+
+        Set<Book> actual = bookDatabase.findUniqueBooks();
+
+        assertEquals(expected, actual);
 
     }
 
+    @Test
+    public void containsTest() {
+
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+
+        bookDatabase.save(new Book("A1", "T1"));
+        bookDatabase.save(new Book("A2", "T2"));
+        bookDatabase.save(new Book("A3", "T3"));
+        bookDatabase.save(new Book("A4", "T4"));
+
+        assertTrue(bookDatabase.contains(bookDatabase.books.get(1)));
+
+    }
+
+    @Test
+    public void uniqueWordFinderTest() {
+
+        UniqueWordFinder uniqueWordFinder = new UniqueWordFinder();
+
+        Set<String> expected = new HashSet<>();
+        expected.add("A");
+        expected.add("a");
+        expected.add("B");
+        expected.add("bb");
+
+        Set<String> actual = new HashSet<>(uniqueWordFinder.find("A a a a a a a a a a a a B bb bb bb"));
+
+        assertEquals(expected, actual);
+
+    }
 }

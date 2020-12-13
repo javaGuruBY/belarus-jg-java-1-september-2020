@@ -182,12 +182,15 @@ public class BookDatabaseImpl implements BookDatabase {
     public boolean contains(Book book) {
 
         if (books.contains(book)) {
+
             return true;
+
         } else {
+
             return false;
+
         }
     }
-
 
 }
 
