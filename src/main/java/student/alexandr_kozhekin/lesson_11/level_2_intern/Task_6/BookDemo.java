@@ -13,11 +13,13 @@ public class BookDemo {
         BookDatabaseImpl bookDatabaseImpl = new BookDatabaseImpl();
 
         Book book1 = new Book("A1", "T1");
-        Book book2 = new Book("A1", "T2");
-        Book book3 = new Book("A1", "T1");
-        Book book4 = new Book("A1", "T1");
-        Book book5 = new Book("A1", "T3");
-        Book book6 = new Book("A1", "T1");
+        Book book2 = new Book("A9", "T2");
+        Book book3 = new Book("A1", "T3");
+        Book book4 = new Book("A2", "T1");
+        Book book5 = new Book("A2", "T3");
+        Book book6 = new Book("A2", "T1");
+        Book book7 = new Book("A3", "T1");
+        Book book8 = new Book("A9", "T1");
 
         bookDatabaseImpl.save(book1);
         bookDatabaseImpl.save(book2);
@@ -25,6 +27,8 @@ public class BookDemo {
         bookDatabaseImpl.save(book4);
         bookDatabaseImpl.save(book5);
         bookDatabaseImpl.save(book6);
+        bookDatabaseImpl.save(book7);
+        bookDatabaseImpl.save(book8);
 
 
 //        System.out.println(bookDatabaseImpl.books);
@@ -38,6 +42,8 @@ public class BookDemo {
 //        System.out.println(bookDatabaseImpl.findById(6L));
 //        System.out.println(bookDatabaseImpl.countAllBooks());
 
+        System.out.println(bookDatabaseImpl.findByAuthor("A1"));
+
         System.out.println(bookDatabaseImpl.find(new TitleSearchCriteria("T1")));
 
         System.out.println(bookDatabaseImpl.findUniqueAuthors());
@@ -45,6 +51,10 @@ public class BookDemo {
         System.out.println(bookDatabaseImpl.findUniqueTitles());
 
         System.out.println(bookDatabaseImpl.findUniqueBooks());
+
+        System.out.println(bookDatabaseImpl.getAuthorToBooksMap());
+
+        System.out.println(bookDatabaseImpl.getEachAuthorBookCount());
 
     }
 }

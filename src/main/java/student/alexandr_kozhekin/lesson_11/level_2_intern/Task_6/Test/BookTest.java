@@ -350,4 +350,52 @@ public class BookTest {
         assertEquals(expected, actual);
 
     }
+
+    @Test
+    public void getAuthorToBooksMapTest() {
+
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+
+        bookDatabase.save(new Book("A1", "T1"));
+        bookDatabase.save(new Book("A1", "T2"));
+        bookDatabase.save(new Book("A2", "T3"));
+        bookDatabase.save(new Book("A2", "T4"));
+
+        List<Book> oneListUniqueBooks = new ArrayList<>();
+        oneListUniqueBooks.add(bookDatabase.books.get(0));
+        oneListUniqueBooks.add(bookDatabase.books.get(1));
+
+        List<Book> twoListUniqueBooks = new ArrayList<>();
+        twoListUniqueBooks.add(bookDatabase.books.get(2));
+        twoListUniqueBooks.add(bookDatabase.books.get(3));
+
+        Map<String, List<Book>> expected = new HashMap<>();
+        expected.put(bookDatabase.books.get(0).getAuthor(), oneListUniqueBooks);
+        expected.put(bookDatabase.books.get(2).getAuthor(), twoListUniqueBooks);
+
+        Map<String, List<Book>> actual = bookDatabase.getAuthorToBooksMap();
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void getEachAuthorBookCountTest() {
+
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+
+        bookDatabase.save(new Book("A1", "T1"));
+        bookDatabase.save(new Book("A1", "T2"));
+        bookDatabase.save(new Book("A2", "T3"));
+        bookDatabase.save(new Book("A2", "T4"));
+
+        Map<String, Integer> expected = new HashMap<>();
+        expected.put(bookDatabase.books.get(0).getAuthor(), 2);
+        expected.put(bookDatabase.books.get(2).getAuthor(), 2);
+
+        Map<String, Integer> actual = bookDatabase.getEachAuthorBookCount();
+
+        assertEquals(expected, actual);
+
+    }
 }

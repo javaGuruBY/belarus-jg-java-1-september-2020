@@ -192,6 +192,40 @@ public class BookDatabaseImpl implements BookDatabase {
         }
     }
 
+    @Override
+    public Map<String, List<Book>> getAuthorToBooksMap() {
+
+        Map<String, List<Book>> bookMap = new HashMap<>();
+
+        for (int i = 0; i < books.size(); i++){
+
+            bookMap.put(books.get(i).getAuthor(), findByAuthor(books.get(i).getAuthor()));
+
+        }
+
+        return bookMap;
+    }
+
+    @Override
+    public Map<String, Integer> getEachAuthorBookCount() {
+
+        Map<String, Integer> bookMap = new HashMap<>();
+        //уникальные авторы
+        Set<String> uniqueAuthors = findUniqueAuthors();
+        //получение упорядоченого списка авторов для метода findByAuthor
+        List<String> uniqueAuthorList = new ArrayList<>(uniqueAuthors);
+
+        for (int i = 0; i < uniqueAuthors.size(); i++){
+            //получения уникальных книг авторов
+            Set<Book> uniqueBook = new HashSet<>(findByAuthor(uniqueAuthorList.get(i)));
+            //вставка в Мап уникальных авторов и количество уникальных книг авторов
+            bookMap.put(uniqueAuthorList.get(i), uniqueBook.size());
+
+        }
+//профит
+        return bookMap;
+    }
+
 }
 
 

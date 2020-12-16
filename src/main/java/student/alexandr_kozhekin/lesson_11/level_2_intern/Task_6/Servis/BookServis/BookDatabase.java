@@ -4,6 +4,7 @@ import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Main.Book;
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCriteriaServis.SearchCriteria;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
@@ -36,5 +37,9 @@ public interface BookDatabase {
     Set<Book> findUniqueBooks();
 
     boolean contains(Book book);
+
+    Map<String, List<Book>> getAuthorToBooksMap();
+
+    Map<String, Integer> getEachAuthorBookCount();
 
 }
