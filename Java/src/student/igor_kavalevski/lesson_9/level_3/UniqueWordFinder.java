@@ -1,5 +1,6 @@
 package student.igor_kavalevski.lesson_9.level_3;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,9 +12,8 @@ public class UniqueWordFinder {
 
         String[] texts = text.split(" ");
 
-        for (String word : texts) {
-            uniqueWords.add(word);
-        }
+        Collections.addAll(uniqueWords, texts);
+
         return uniqueWords;
     }
 }
