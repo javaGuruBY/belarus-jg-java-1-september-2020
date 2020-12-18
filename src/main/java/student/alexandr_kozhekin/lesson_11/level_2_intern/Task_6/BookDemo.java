@@ -6,6 +6,10 @@ import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCr
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCriteriaServis.AuthorSearchCriteria;
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCriteriaServis.OrSearchCriteria;
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCriteriaServis.TitleSearchCriteria;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.DeleteByIdUIAction;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.FindByIdUIAction;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.FindByTitleUIAction;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.SaveBookUIAction;
 
 public class BookDemo {
     public static void main(String[] args) {
@@ -42,19 +46,24 @@ public class BookDemo {
 //        System.out.println(bookDatabaseImpl.findById(6L));
 //        System.out.println(bookDatabaseImpl.countAllBooks());
 
-        System.out.println(bookDatabaseImpl.findByAuthor("A1"));
+//        System.out.println(bookDatabaseImpl.findByAuthor("A1"));
+//
+//        System.out.println(bookDatabaseImpl.find(new TitleSearchCriteria("T1")));
+//
+//        System.out.println(bookDatabaseImpl.findUniqueAuthors());
+//
+//        System.out.println(bookDatabaseImpl.findUniqueTitles());
+//
+//        System.out.println(bookDatabaseImpl.findUniqueBooks());
+//
+//        System.out.println(bookDatabaseImpl.getAuthorToBooksMap());
+//
+//        System.out.println(bookDatabaseImpl.getEachAuthorBookCount());
 
-        System.out.println(bookDatabaseImpl.find(new TitleSearchCriteria("T1")));
+        DeleteByIdUIAction find = new DeleteByIdUIAction(bookDatabaseImpl);
+        find.execute();
 
-        System.out.println(bookDatabaseImpl.findUniqueAuthors());
 
-        System.out.println(bookDatabaseImpl.findUniqueTitles());
-
-        System.out.println(bookDatabaseImpl.findUniqueBooks());
-
-        System.out.println(bookDatabaseImpl.getAuthorToBooksMap());
-
-        System.out.println(bookDatabaseImpl.getEachAuthorBookCount());
 
     }
 }

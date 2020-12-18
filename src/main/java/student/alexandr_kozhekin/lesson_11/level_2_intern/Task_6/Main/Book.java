@@ -16,6 +16,14 @@ public class Book {
 
     }
 
+    public Book(String author, String title, String yearOfIssue) {
+
+        this.author = author;
+        this.title = title;
+        this.yearOfIssue = yearOfIssue;
+
+    }
+
     public void setId(Long id) {
 
         this.id = id;
