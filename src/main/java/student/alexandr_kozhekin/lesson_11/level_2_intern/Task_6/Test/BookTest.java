@@ -165,13 +165,13 @@ public class BookTest {
     @Test
     public void deleteByTitleTest() {
 
-        boolean[] expected = {true, true};
-        boolean[] actual = new boolean[expected.length];
+//        boolean[] expected = {true, true};
+//        boolean[] actual = new boolean[expected.length];
 
         BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
 
-            for (int i = 0; i < expected.length; i++) {
-                try {
+//            for (int i = 0; i < expected.length; i++) {
+//                try {
 
                 Book book = new Book("A1", "T1");
                 Book book2 = new Book("A2", "T2");
@@ -199,18 +199,18 @@ public class BookTest {
 
                 assertEquals(actualBooksListSize, expectSizeList);
 
-                actual[i] = true;
+//                actual[i] = true;
 
 //                bookDatabase.books.removeAll(bookDatabase.books);
 //                actualBookList.removeAll(actualBookList);
 
-                } catch(AssertionError e) {
-
-                actual[i] = false;
-
-            }
-        }
-        assertEquals(expected, actual);
+//                } catch(AssertionError e) {
+//
+//                actual[i] = false;
+//
+//            }
+//        }
+//       assertEquals(expected, actual);
     }
 
     @Test
