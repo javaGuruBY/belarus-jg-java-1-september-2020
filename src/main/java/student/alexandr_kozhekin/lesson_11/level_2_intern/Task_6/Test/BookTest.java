@@ -68,7 +68,7 @@ public class BookTest {
 
         bookDatabase.save(book);
 
-        boolean actual = bookDatabase.deleteBook(book);
+        boolean actual = bookDatabase.deleteBook(new Book("A1", "T1"));
 
         assertEquals(true, actual);
 

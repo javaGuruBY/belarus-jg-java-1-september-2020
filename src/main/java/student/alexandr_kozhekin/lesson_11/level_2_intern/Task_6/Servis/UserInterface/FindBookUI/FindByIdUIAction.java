@@ -1,6 +1,8 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.FindBookUI;
 
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.BookServis.BookDatabase;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.UIAction;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

@@ -1,6 +1,7 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.DeleteBookUI;
 
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.BookServis.BookDatabase;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.UIAction;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -19,7 +20,7 @@ public class DeleteByIdUIAction implements UIAction {
     public void execute() {
 
         Long bookID;
-        String choice = null;
+        String choice;
         String makeChoiceYes = "Y";
         String makeChoiceNot = "N";
 

@@ -10,36 +10,36 @@ import java.util.Set;
 
 public interface BookDatabase {
 
-    Long save(Book book);
+    Long save(Book book); //
 
-    boolean deleteBook(Long bookId);
+    boolean deleteBook(Long bookId); //
 
-    boolean deleteBook(Book book);
+    boolean deleteBook(Book book);  //
 
-    Optional<Book> findById(Long bookId);
+    Optional<Book> findById(Long bookId); //
 
-    List<Book> findByAuthor(String author);
+    List<Book> findByAuthor(String author); //
 
-    List<Book> findByTitle(String title);
+    List<Book> findByTitle(String title); //
 
-    int countAllBooks();
+    int countAllBooks(); //
 
-    void deleteByAuthor(String author);
+    void deleteByAuthor(String author); //
 
-    void deleteByTitle(String title);
+    void deleteByTitle(String title); //
 
     List<Book> find(SearchCriteria searchCriteria); //доделать
 
-    Set<String> findUniqueAuthors();
+    Set<String> findUniqueAuthors(); //
 
-    Set<String> findUniqueTitles();
+    Set<String> findUniqueTitles(); //
 
-    Set<Book> findUniqueBooks();
+    Set<Book> findUniqueBooks(); //
 
-    boolean contains(Book book);
+    boolean contains(Book book); //
 
-    Map<String, List<Book>> getAuthorToBooksMap();
+    Map<String, List<Book>> getAuthorToBooksMap(); //
 
-    Map<String, Integer> getEachAuthorBookCount();
+    Map<String, Integer> getEachAuthorBookCount(); //
 
 }

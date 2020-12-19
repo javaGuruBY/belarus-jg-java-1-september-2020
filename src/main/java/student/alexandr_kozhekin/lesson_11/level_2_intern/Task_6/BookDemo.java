@@ -2,14 +2,9 @@ package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6;
 
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Main.Book;
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.BookServis.BookDatabaseImpl;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCriteriaServis.AndSearchCriteria;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCriteriaServis.AuthorSearchCriteria;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCriteriaServis.OrSearchCriteria;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.SearchCriteriaServis.TitleSearchCriteria;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.DeleteByIdUIAction;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.FindByIdUIAction;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.FindByTitleUIAction;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.SaveBookUIAction;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.DeleteBookUI.DeleteByIdUIAction;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.FindBookUI.FindUniqueBooksUIAction;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.GetBookUI.GetEachAuthorBookCountUIAction;
 
 public class BookDemo {
     public static void main(String[] args) {
@@ -60,10 +55,8 @@ public class BookDemo {
 //
 //        System.out.println(bookDatabaseImpl.getEachAuthorBookCount());
 
-        DeleteByIdUIAction find = new DeleteByIdUIAction(bookDatabaseImpl);
+        GetEachAuthorBookCountUIAction find = new GetEachAuthorBookCountUIAction(bookDatabaseImpl);
         find.execute();
-
-
 
     }
 }

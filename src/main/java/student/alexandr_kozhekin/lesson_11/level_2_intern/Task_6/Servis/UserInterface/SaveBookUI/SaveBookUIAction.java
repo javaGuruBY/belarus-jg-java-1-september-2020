@@ -1,11 +1,12 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.SaveBookUI;
 
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Main.Book;
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.BookServis.BookDatabase;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_6.Servis.UserInterface.UIAction;
 
 import java.util.Scanner;
 
-public class SaveBookUIAction implements UIAction{
+public class SaveBookUIAction implements UIAction {
 
     private BookDatabase bookDatabase;
 
@@ -41,8 +42,8 @@ public class SaveBookUIAction implements UIAction{
         System.out.println("Введите год выпуска книги: ");
 
         yearOfIssueBook = scanner.nextLine();
-
-        if (authorBook != null || titleBook != null || yearOfIssueBook != null){
+//ДОРАБОТАТЬ!!!!
+        if (titleBook != "" || authorBook !="" || yearOfIssueBook != ""){
 
             bookDatabase.save(new Book(authorBook, titleBook, yearOfIssueBook));
 
