@@ -1,4 +1,4 @@
-package student.alexandr_kozhekin.lesson_11.level_1_intern.Task_5;
+package student.alexandr_kozhekin.lesson_11.level_1_intern.Task_7;
 
 import org.junit.Test;
 import java.util.ArrayList;
