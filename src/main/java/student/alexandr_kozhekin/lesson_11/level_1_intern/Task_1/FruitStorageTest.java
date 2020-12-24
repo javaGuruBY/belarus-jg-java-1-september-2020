@@ -97,11 +97,12 @@ public class FruitStorageTest {
         FruitStorage fruitStorage = new FruitStorage();
 
         List<Integer> extend = new ArrayList<>();
-
+        extend.add(fruitStorage.getAllApples().get(1).getWeight());
         extend.add(fruitStorage.getAllApples().get(2).getWeight());
         extend.add(fruitStorage.getAllApples().get(3).getWeight());
+        extend.add(fruitStorage.getAllApples().get(7).getWeight());
 
-        List<Apple> appleList = fruitStorage.fruitStorageSearchForWeightApple(fruitStorage.getAllApples(), 200);
+        List<Apple> appleList = fruitStorage.fruitStorageSearchForWeightApple(fruitStorage.getAllApples(), 150);
 
         List<Integer> actual = new ArrayList<>();
 
