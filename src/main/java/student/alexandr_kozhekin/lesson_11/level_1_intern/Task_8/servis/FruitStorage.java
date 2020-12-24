@@ -1,4 +1,6 @@
-package student.alexandr_kozhekin.lesson_11.level_1_intern.Task_7;
+package student.alexandr_kozhekin.lesson_11.level_1_intern.Task_8.servis;
+
+import student.alexandr_kozhekin.lesson_11.level_1_intern.Task_8.bean.Apple;
 
 import java.util.ArrayList;
 import java.util.List;
