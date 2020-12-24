@@ -30,4 +30,26 @@ public class FruitStorageTest {
 
         assertEquals(extend, actual);
     }
+
+    @Test
+    public void fruitStorageSearchRedAppleTest(){
+
+        FruitStorage fruitStorage = new FruitStorage();
+
+        List<String> extend = new ArrayList<>();
+
+        extend.add(fruitStorage.getAllApples().get(0).getColor());
+        extend.add(fruitStorage.getAllApples().get(1).getColor());
+        extend.add(fruitStorage.getAllApples().get(2).getColor());
+
+        List<String> actual = new ArrayList<>();
+
+        for (int i = 0; i < extend.size(); i++){
+
+            actual.add(fruitStorage.fruitStorageSearchRedApple(fruitStorage.getAllApples()).get(i).getColor());
+
+        }
+
+        assertEquals(extend, actual);
+    }
 }
