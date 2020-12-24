@@ -70,4 +70,19 @@ public class FruitStorage {
         return searchAppleColor;
     }
 
+    public List<Apple> fruitStorageSearchForWeightApple (List<Apple> apples, int weight) {
+
+        List<Apple> searchAppleColor = new ArrayList<>();
+
+        for (int i = 0; i < getAllApples().size(); i++) {
+
+            if (getAllApples().get(i).getWeight() >= weight){
+
+                searchAppleColor.add(getAllApples().get(i));
+
+            }
+
+        }
+        return searchAppleColor;
+    }
 }

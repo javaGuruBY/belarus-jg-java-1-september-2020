@@ -90,4 +90,28 @@ public class FruitStorageTest {
         assertEquals(secondExtend, secondActual);
 
     }
+
+    @Test
+    public void fruitStorageSearchForWeightAppleTest() {
+
+        FruitStorage fruitStorage = new FruitStorage();
+
+        List<Integer> extend = new ArrayList<>();
+
+        extend.add(fruitStorage.getAllApples().get(2).getWeight());
+        extend.add(fruitStorage.getAllApples().get(3).getWeight());
+
+        List<Apple> appleList = fruitStorage.fruitStorageSearchForWeightApple(fruitStorage.getAllApples(), 200);
+
+        List<Integer> actual = new ArrayList<>();
+
+        for (int i = 0; i < extend.size(); i++) {
+
+            actual.add(appleList.get(i).getWeight());
+
+        }
+
+        assertEquals(extend, actual);
+
+    }
 }
