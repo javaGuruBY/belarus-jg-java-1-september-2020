@@ -1,8 +1,8 @@
-package student.alexandr_kozhekin.lesson_11.level_1_intern.Task_8.test;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_8.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_11.level_1_intern.Task_8.servis.FruitStorage;
-import student.alexandr_kozhekin.lesson_11.level_1_intern.Task_8.bean.Apple;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_8.servis.FruitStorage;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_8.bean.Apple;
 
 import java.util.ArrayList;
 import java.util.List;
