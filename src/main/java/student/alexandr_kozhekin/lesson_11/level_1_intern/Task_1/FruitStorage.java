@@ -60,7 +60,7 @@ public class FruitStorage {
 
         for (int i = 0; i < getAllApples().size(); i++) {
 
-            if (getAllApples().get(i).getColor().equals(applesColor)){
+            if (getAllApples().get(i).getColor().equalsIgnoreCase(applesColor)){
 
                 searchAppleColor.add(getAllApples().get(i));
 
