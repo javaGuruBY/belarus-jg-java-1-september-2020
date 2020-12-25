@@ -1,7 +1,8 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_10.servis;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis;
 
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_10.bean.Apple;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_10.servis.criteria.ApplePredicate;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.bean.Apple;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.criteria.ApplePredicate;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.criteria.HeavyWeightAppleCriteria;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,6 +103,23 @@ public class FruitStorage {
             }
         }
         return result;
+    }
+
+    public List<Apple> findHeavyApples(List<Apple> inventory){
+
+        List<Apple> result = new ArrayList<>();
+        HeavyWeightAppleCriteria heavyWeightAppleCriteria = new HeavyWeightAppleCriteria();
+
+        for (Apple apple : inventory){
+            if(heavyWeightAppleCriteria.test(apple)){
+
+                result.add(apple);
+
+            }
+        }
+
+        return result;
+
     }
 
 }
