@@ -1,8 +1,7 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.servis;
 
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.bean.Apple;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.criteria.ApplePredicate;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.criteria.HeavyWeightAppleCriteria;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.bean.Apple;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.servis.criteria.ApplePredicate;
 
 import java.util.ArrayList;
 import java.util.List;

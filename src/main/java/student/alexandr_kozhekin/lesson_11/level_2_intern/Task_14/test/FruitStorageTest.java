@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.test;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.FruitStorage;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.bean.Apple;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.criteria.*;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.servis.FruitStorage;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.bean.Apple;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.servis.criteria.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -244,4 +244,127 @@ public class FruitStorageTest {
         assertEquals(extend, actual);
     }
 
+    @Test
+    public void findRedAppleWithAnonClassTest() {
+
+        FruitStorage fruitStorage = new FruitStorage();
+
+        List<Apple> redApples = fruitStorage.findApples(fruitStorage.getAllApples(), new ApplePredicate() {
+
+            public boolean test(Apple apple) {
+
+                return "red".equals(apple.getColor());
+
+            }
+        });
+
+        List<String> extend = new ArrayList<>();
+
+        extend.add(fruitStorage.getAllApples().get(0).getColor());
+        extend.add(fruitStorage.getAllApples().get(1).getColor());
+        extend.add(fruitStorage.getAllApples().get(2).getColor());
+
+        List<String> actual = new ArrayList<>();
+
+        for (int i = 0; i < extend.size(); i++){
+
+            actual.add(redApples.get(i).getColor());
+
+        }
+
+        assertEquals(extend, actual);
+
+    }
+
+    @Test
+    public void findGreenApplesWithAnonClassTest() {
+
+        FruitStorage fruitStorage = new FruitStorage();
+
+        List<Apple> greenApples = fruitStorage.findApples(fruitStorage.getAllApples(), new ApplePredicate() {
+            @Override
+            public boolean test(Apple apple) {
+                return "green".equalsIgnoreCase(apple.getColor());
+            }
+        });
+
+        List<String> extend = new ArrayList<>();
+
+        extend.add(fruitStorage.getAllApples().get(3).getColor());
+        extend.add(fruitStorage.getAllApples().get(4).getColor());
+        extend.add(fruitStorage.getAllApples().get(5).getColor());
+
+        List<String> actual = new ArrayList<>();
+
+        for (int i = 0; i < extend.size(); i++){
+
+            actual.add(greenApples.get(i).getColor());
+
+        }
+
+        assertEquals(extend, actual);
+
+    }
+
+    @Test
+    public void findHeavyWeightAppleWithAnonClass(){
+
+        FruitStorage fruitStorage = new FruitStorage();
+
+        List<Apple> heavyApples = fruitStorage.findApples(fruitStorage.getAllApples(), new ApplePredicate() {
+            @Override
+            public boolean test(Apple apple) {
+                return 150 < apple.getWeight();
+            }
+        });
+
+        List<Integer> extend = new ArrayList<>();
+
+        extend.add(fruitStorage.getAllApples().get(1).getWeight());
+        extend.add(fruitStorage.getAllApples().get(2).getWeight());
+        extend.add(fruitStorage.getAllApples().get(3).getWeight());
+        extend.add(fruitStorage.getAllApples().get(7).getWeight());
+
+        List<Integer> actual = new ArrayList<>();
+
+        for (int i = 0; i < extend.size(); i++) {
+
+            actual.add(heavyApples.get(i).getWeight());
+
+        }
+
+        assertEquals(extend, actual);
+
+    }
+
+    @Test
+    public void findLightWeightAppleWithAnonClass() {
+
+        FruitStorage fruitStorage = new FruitStorage();
+
+        List<Apple> lightApples = fruitStorage.findApples(fruitStorage.getAllApples(), new ApplePredicate() {
+            @Override
+            public boolean test(Apple apple) {
+                return 150 > apple.getWeight();
+            }
+        });
+
+        List<Integer> extend = new ArrayList<>();
+
+        extend.add(fruitStorage.getAllApples().get(0).getWeight());
+        extend.add(fruitStorage.getAllApples().get(4).getWeight());
+        extend.add(fruitStorage.getAllApples().get(5).getWeight());
+        extend.add(fruitStorage.getAllApples().get(6).getWeight());
+
+        List<Integer> actual = new ArrayList<>();
+
+        for (int i = 0; i < extend.size(); i++) {
+
+            actual.add(lightApples.get(i).getWeight());
+
+        }
+
+        assertEquals(extend, actual);
+
+    }
 }
