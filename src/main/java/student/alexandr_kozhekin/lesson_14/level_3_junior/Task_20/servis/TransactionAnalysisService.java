@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_19.servis;
+package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.servis;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_19.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_19.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_19.test.TransactionAnalysisServiceTest;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.test.TransactionAnalysisServiceTest;
 
 import java.util.ArrayList;
 import java.util.Arrays;

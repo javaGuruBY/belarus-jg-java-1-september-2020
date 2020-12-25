@@ -1,6 +1,6 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_19.test;
+package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.test;
 
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_19.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.bean.Transaction;
 
 import java.util.List;
 import java.util.stream.Collectors;

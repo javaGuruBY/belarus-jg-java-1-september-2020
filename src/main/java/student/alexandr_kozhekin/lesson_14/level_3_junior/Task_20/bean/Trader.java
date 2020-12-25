@@ -1,4 +1,4 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_19.bean;
+package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.bean;
 
 public class Trader {
 
