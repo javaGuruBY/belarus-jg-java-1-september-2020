@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.servis;
+package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_21.servis;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_20.test.TransactionAnalysisServiceTest;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_21.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_21.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_21.test.TransactionAnalysisServiceTest;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +25,35 @@ public class TransactionAnalysisService {
         expected.add(transactionTestData.getTransactions().get(2).getYear());
 
         List<Transaction> transactionList = transactionAnalysisServiceTest.
-                fiendTransactionIn2011(transactionTestData.getTransactions());
+                fiendTransactionForYear(transactionTestData.getTransactions(), 2011);
+
+        List<Integer> actual = new ArrayList<>();
+
+        for (int i = 0; i < expected.size(); i++){
+
+            actual.add(transactionList.get(i).getYear());
+
+        }
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void fiendTransactionIn2012UnitTest() {
+
+        TransactionAnalysisServiceTest transactionAnalysisServiceTest = new TransactionAnalysisServiceTest();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        List<Integer> expected = new ArrayList<>();
+
+        expected.add(transactionTestData.getTransactions().get(1).getYear());
+        expected.add(transactionTestData.getTransactions().get(3).getYear());
+        expected.add(transactionTestData.getTransactions().get(4).getYear());
+        expected.add(transactionTestData.getTransactions().get(5).getYear());
+
+        List<Transaction> transactionList = transactionAnalysisServiceTest.
+                fiendTransactionForYear(transactionTestData.getTransactions(), 2012);
 
         List<Integer> actual = new ArrayList<>();
 
