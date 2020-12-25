@@ -1,4 +1,4 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.bean;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_17.bean;
 
 import java.io.Serializable;
 import java.util.Objects;

@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.test;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_17.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.servis.FruitStorage;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.bean.Apple;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.servis.criteria.*;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_17.servis.FruitStorage;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_17.bean.Apple;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_17.servis.criteria.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -245,18 +245,12 @@ public class FruitStorageTest {
     }
 
     @Test
-    public void findRedAppleWithAnonClassTest() {
+    public void findRedAppleWithLambdaTest() {
 
         FruitStorage fruitStorage = new FruitStorage();
 
-        List<Apple> redApples = fruitStorage.findApples(fruitStorage.getAllApples(), new ApplePredicate() {
-
-            public boolean test(Apple apple) {
-
-                return "red".equals(apple.getColor());
-
-            }
-        });
+        List<Apple> redApples = fruitStorage.findApples(fruitStorage.getAllApples(),
+                apple -> "red".equals(apple.getColor()));
 
         List<String> extend = new ArrayList<>();
 
@@ -277,16 +271,12 @@ public class FruitStorageTest {
     }
 
     @Test
-    public void findGreenApplesWithAnonClassTest() {
+    public void findGreenApplesWithLambdaTest() {
 
         FruitStorage fruitStorage = new FruitStorage();
 
-        List<Apple> greenApples = fruitStorage.findApples(fruitStorage.getAllApples(), new ApplePredicate() {
-            @Override
-            public boolean test(Apple apple) {
-                return "green".equalsIgnoreCase(apple.getColor());
-            }
-        });
+        List<Apple> greenApples = fruitStorage.findApples(fruitStorage.getAllApples(),
+                apple -> "green".equalsIgnoreCase(apple.getColor()));
 
         List<String> extend = new ArrayList<>();
 
@@ -307,16 +297,12 @@ public class FruitStorageTest {
     }
 
     @Test
-    public void findHeavyWeightAppleWithAnonClass(){
+    public void findHeavyWeightAppleWithLambdaTest(){
 
         FruitStorage fruitStorage = new FruitStorage();
 
-        List<Apple> heavyApples = fruitStorage.findApples(fruitStorage.getAllApples(), new ApplePredicate() {
-            @Override
-            public boolean test(Apple apple) {
-                return 150 < apple.getWeight();
-            }
-        });
+        List<Apple> heavyApples = fruitStorage.findApples(fruitStorage.getAllApples(),
+                apple -> 150 < apple.getWeight());
 
         List<Integer> extend = new ArrayList<>();
 
@@ -338,16 +324,12 @@ public class FruitStorageTest {
     }
 
     @Test
-    public void findLightWeightAppleWithAnonClass() {
+    public void findLightWeightAppleWithLambdaTest() {
 
         FruitStorage fruitStorage = new FruitStorage();
 
-        List<Apple> lightApples = fruitStorage.findApples(fruitStorage.getAllApples(), new ApplePredicate() {
-            @Override
-            public boolean test(Apple apple) {
-                return 150 > apple.getWeight();
-            }
-        });
+        List<Apple> lightApples = fruitStorage.findApples(fruitStorage.getAllApples(),
+                apple -> 150 > apple.getWeight());
 
         List<Integer> extend = new ArrayList<>();
 

@@ -1,6 +1,6 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.servis.criteria;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_17.servis.criteria;
 
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.bean.Apple;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_17.bean.Apple;
 
 public class LightWeightAppleCriteria implements ApplePredicate {
 
