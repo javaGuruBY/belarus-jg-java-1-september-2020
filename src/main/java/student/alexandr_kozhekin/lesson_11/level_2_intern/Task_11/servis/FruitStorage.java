@@ -111,6 +111,7 @@ public class FruitStorage {
         HeavyWeightAppleCriteria heavyWeightAppleCriteria = new HeavyWeightAppleCriteria();
 
         for (Apple apple : inventory){
+
             if(heavyWeightAppleCriteria.test(apple)){
 
                 result.add(apple);
