@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.test;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.servis.FruitStorage;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.bean.Apple;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_14.servis.criteria.*;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.servis.FruitStorage;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.bean.Apple;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_15.servis.criteria.*;
 
 import java.util.ArrayList;
 import java.util.List;
