@@ -3,10 +3,7 @@ package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.test;
 import org.junit.Test;
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.FruitStorage;
 import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.bean.Apple;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.criteria.GreenColorAppleCriteria;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.criteria.HeavyWeightAppleCriteria;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.criteria.LightWeightAppleCriteria;
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.criteria.RedColorAppleCriteria;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_11.servis.criteria.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -226,18 +223,15 @@ public class FruitStorageTest {
     }
 
     @Test
-    public void findHeavyApplesTest() {
+    public void findHeavyAndGreenApplesTest() {
 
         FruitStorage fruitStorage = new FruitStorage();
 
         List<Integer> extend = new ArrayList<>();
 
-        extend.add(fruitStorage.getAllApples().get(1).getWeight());
-        extend.add(fruitStorage.getAllApples().get(2).getWeight());
         extend.add(fruitStorage.getAllApples().get(3).getWeight());
-        extend.add(fruitStorage.getAllApples().get(7).getWeight());
 
-        List<Apple> appleList = fruitStorage.findHeavyApples(fruitStorage.getAllApples());
+        List<Apple> appleList = fruitStorage.findApples(fruitStorage.getAllApples(), new AppleGreenAndHeavyWeightPredicate());
 
         List<Integer> actual = new ArrayList<>();
 

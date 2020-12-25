@@ -105,22 +105,4 @@ public class FruitStorage {
         return result;
     }
 
-    public List<Apple> findHeavyApples(List<Apple> inventory){
-
-        List<Apple> result = new ArrayList<>();
-        HeavyWeightAppleCriteria heavyWeightAppleCriteria = new HeavyWeightAppleCriteria();
-
-        for (Apple apple : inventory){
-
-            if(heavyWeightAppleCriteria.test(apple)){
-
-                result.add(apple);
-
-            }
-        }
-
-        return result;
-
-    }
-
 }
