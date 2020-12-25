@@ -1,6 +1,7 @@
-package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_8.servis;
+package student.alexandr_kozhekin.lesson_11.level_2_intern.Task_10.servis;
 
-import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_8.bean.Apple;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_10.bean.Apple;
+import student.alexandr_kozhekin.lesson_11.level_2_intern.Task_10.servis.criteria.ApplePredicate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,4 +88,20 @@ public class FruitStorage {
         }
         return searchAppleColor;
     }
+
+    public List<Apple> findApples(List<Apple> inventory, ApplePredicate p) {
+
+        List<Apple> result = new ArrayList<>();
+
+        for(Apple apple : inventory) {
+
+            if(p.test(apple)) {
+
+                result.add(apple);
+
+            }
+        }
+        return result;
+    }
+
 }
