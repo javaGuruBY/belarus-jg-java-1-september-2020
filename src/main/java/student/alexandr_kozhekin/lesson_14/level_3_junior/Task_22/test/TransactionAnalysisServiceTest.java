@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_21.servis;
+package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_21.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_21.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_21.test.TransactionAnalysisServiceTest;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.servis.TransactionAnalysisService;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,12 +11,12 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class TransactionAnalysisService {
+public class TransactionAnalysisServiceTest {
 
     @Test
     public void fiendTransactionIn2011UnitTest() {
 
-        TransactionAnalysisServiceTest transactionAnalysisServiceTest = new TransactionAnalysisServiceTest();
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
         TransactionTestData transactionTestData = new TransactionTestData();
 
         List<Integer> expected = new ArrayList<>();
@@ -24,7 +24,7 @@ public class TransactionAnalysisService {
         expected.add(transactionTestData.getTransactions().get(0).getYear());
         expected.add(transactionTestData.getTransactions().get(2).getYear());
 
-        List<Transaction> transactionList = transactionAnalysisServiceTest.
+        List<Transaction> transactionList = transactionAnalysisService.
                 fiendTransactionForYear(transactionTestData.getTransactions(), 2011);
 
         List<Integer> actual = new ArrayList<>();
@@ -42,7 +42,7 @@ public class TransactionAnalysisService {
     @Test
     public void fiendTransactionIn2012UnitTest() {
 
-        TransactionAnalysisServiceTest transactionAnalysisServiceTest = new TransactionAnalysisServiceTest();
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
         TransactionTestData transactionTestData = new TransactionTestData();
 
         List<Integer> expected = new ArrayList<>();
@@ -52,7 +52,7 @@ public class TransactionAnalysisService {
         expected.add(transactionTestData.getTransactions().get(4).getYear());
         expected.add(transactionTestData.getTransactions().get(5).getYear());
 
-        List<Transaction> transactionList = transactionAnalysisServiceTest.
+        List<Transaction> transactionList = transactionAnalysisService.
                 fiendTransactionForYear(transactionTestData.getTransactions(), 2012);
 
         List<Integer> actual = new ArrayList<>();
@@ -60,6 +60,36 @@ public class TransactionAnalysisService {
         for (int i = 0; i < expected.size(); i++){
 
             actual.add(transactionList.get(i).getYear());
+
+        }
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void sortTransactionForValueUnitTest() {
+
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        List<Integer> expected = new ArrayList<>();
+
+        expected.add(transactionTestData.getTransactions().get(0).getValue());
+        expected.add(transactionTestData.getTransactions().get(2).getValue());
+        expected.add(transactionTestData.getTransactions().get(4).getValue());
+        expected.add(transactionTestData.getTransactions().get(3).getValue());
+        expected.add(transactionTestData.getTransactions().get(5).getValue());
+        expected.add(transactionTestData.getTransactions().get(1).getValue());
+
+        List<Transaction> transactionList = transactionAnalysisService.
+                sortedTransactionForValue(transactionTestData.getTransactions());
+
+        List<Integer> actual = new ArrayList<>();
+
+        for (int i = 0; i < expected.size(); i++){
+
+            actual.add(transactionList.get(i).getValue());
 
         }
 
