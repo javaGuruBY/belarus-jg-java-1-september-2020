@@ -1,13 +1,11 @@
-package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_25.test;
+package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_26.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_25.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_25.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_25.servis.TransactionAnalysisService;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_26.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_26.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_26.servis.TransactionAnalysisService;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -176,6 +174,28 @@ public class TransactionAnalysisServiceTest {
 
         List<Integer> actual = transactionAnalysisService.
                 fiendAllYearsTransaction(transactionTestData.getTransactions());
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void fiendAllUniqueYearsTransactionTest() {
+
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        Set<Integer> expected = new HashSet<>();
+
+        expected.add(transactionTestData.getTransactions().get(0).getYear());
+        expected.add(transactionTestData.getTransactions().get(1).getYear());
+        expected.add(transactionTestData.getTransactions().get(2).getYear());
+        expected.add(transactionTestData.getTransactions().get(3).getYear());
+        expected.add(transactionTestData.getTransactions().get(4).getYear());
+        expected.add(transactionTestData.getTransactions().get(5).getYear());
+
+        Set<Integer> actual = transactionAnalysisService.
+                fiendAllUniqueYearsTransaction(transactionTestData.getTransactions());
 
         assertEquals(expected, actual);
 
