@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.test;
+package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_24.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.servis.TransactionAnalysisService;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_24.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_24.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_24.servis.TransactionAnalysisService;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -124,6 +124,38 @@ public class TransactionAnalysisServiceTest {
         }
 
         assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void fiendTransactionIn2011AndSortTest() {
+
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        List<Integer> expectedFirst = new ArrayList<>();
+        List<Integer> expectedSecond = new ArrayList<>();
+
+        expectedFirst.add(transactionTestData.getTransactions().get(0).getYear());
+        expectedFirst.add(transactionTestData.getTransactions().get(2).getYear());
+        expectedSecond.add(transactionTestData.getTransactions().get(0).getValue());
+        expectedSecond.add(transactionTestData.getTransactions().get(2).getValue());
+
+        List<Transaction> transactionList = transactionAnalysisService.
+                fiendTransactionIn2011AndSort(transactionTestData.getTransactions());
+
+        List<Integer> actualFirst = new ArrayList<>();
+        List<Integer> actualSecond = new ArrayList<>();
+
+        for (int i = 0; i < expectedFirst.size(); i++){
+
+            actualFirst.add(transactionList.get(i).getYear());
+            actualSecond.add(transactionList.get(i).getValue());
+
+        }
+
+        assertEquals(expectedFirst, actualFirst);
+        assertEquals(expectedSecond, actualSecond);
 
     }
 }
