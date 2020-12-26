@@ -1,6 +1,7 @@
-package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_26.servis;
+package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_27.servis;
 
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_26.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_27.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_27.bean.Transaction;
 
 import java.util.Comparator;
 import java.util.List;
@@ -54,6 +55,15 @@ public class TransactionAnalysisService {
 
         return transactions.stream().
                 map(Transaction::getYear).
+                collect(Collectors.toSet());
+
+    }
+
+    public Set<String> fiendAllUniqueTrader(List<Transaction> transactions){
+
+        return transactions.stream().
+                map(Transaction::getTrader).
+                map(Trader::getName).
                 collect(Collectors.toSet());
 
     }
