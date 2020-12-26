@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_28.test;
+package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_29.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_28.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_28.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_28.servis.TransactionAnalysisService;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_29.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_29.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_29.servis.TransactionAnalysisService;
 
 import java.util.*;
 
@@ -240,6 +240,25 @@ public class TransactionAnalysisServiceTest {
 
         Set<String> actual = transactionAnalysisService.
                 fiendAllUniqueCityTrader(transactionTestData.getTransactions());
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void fiendAllTraderFromCambridgeTest() {
+
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        Set<String> expected = new HashSet<>();
+
+        expected.add(transactionTestData.getTransactions().get(0).getTrader().getName());
+        expected.add(transactionTestData.getTransactions().get(2).getTrader().getName());
+        expected.add(transactionTestData.getTransactions().get(5).getTrader().getName());
+
+        Set<String> actual = transactionAnalysisService.
+                fiendAllTraderFromCambridge(transactionTestData.getTransactions());
 
         assertEquals(expected, actual);
 
