@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.test;
+package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.servis.TransactionAnalysisService;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.servis.TransactionAnalysisService;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -84,6 +84,36 @@ public class TransactionAnalysisServiceTest {
 
         List<Transaction> transactionList = transactionAnalysisService.
                 sortedTransactionForValue(transactionTestData.getTransactions());
+
+        List<Integer> actual = new ArrayList<>();
+
+        for (int i = 0; i < expected.size(); i++){
+
+            actual.add(transactionList.get(i).getValue());
+
+        }
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void reversSortedTransactionForValueTest() {
+
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        List<Integer> expected = new ArrayList<>();
+
+        expected.add(transactionTestData.getTransactions().get(1).getValue());
+        expected.add(transactionTestData.getTransactions().get(5).getValue());
+        expected.add(transactionTestData.getTransactions().get(3).getValue());
+        expected.add(transactionTestData.getTransactions().get(4).getValue());
+        expected.add(transactionTestData.getTransactions().get(2).getValue());
+        expected.add(transactionTestData.getTransactions().get(0).getValue());
+
+        List<Transaction> transactionList = transactionAnalysisService.
+                reversSortedTransactionForValue(transactionTestData.getTransactions());
 
         List<Integer> actual = new ArrayList<>();
 

@@ -1,6 +1,6 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.servis;
+package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.servis;
 
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.bean.Transaction;
 
 import java.util.Comparator;
 import java.util.List;
@@ -20,6 +20,14 @@ public class TransactionAnalysisService {
 
         return transactions.stream().
                 sorted(Comparator.comparing(Transaction::getValue)).
+                collect(Collectors.toList());
+
+    }
+
+    public List<Transaction> reversSortedTransactionForValue(List<Transaction> transactions){
+
+       return transactions.stream().
+                sorted(Comparator.comparing(Transaction::getValue).reversed()).
                 collect(Collectors.toList());
 
     }

@@ -1,4 +1,4 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_22.bean;
+package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_23.bean;
 
 public class Transaction {
 
