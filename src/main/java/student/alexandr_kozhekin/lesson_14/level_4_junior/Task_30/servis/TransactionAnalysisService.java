@@ -1,7 +1,7 @@
-package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_29.servis;
+package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_30.servis;
 
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_29.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_29.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_30.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_30.bean.Transaction;
 
 import java.util.Comparator;
 import java.util.List;
@@ -77,10 +77,10 @@ public class TransactionAnalysisService {
 
     }
 
-    public Set<String> fiendAllTraderFromCambridge(List<Transaction> transactions) {
+    public Set<String> fiendAllTraderFromCity(List<Transaction> transactions, String city) {
 
         return transactions.stream().
-                filter(transaction -> transaction.getTrader().getCity().equals("Cambridge")).
+                filter(transaction -> transaction.getTrader().getCity().equalsIgnoreCase(city)).
                 map(transaction -> transaction.getTrader().getName()).
                 collect(Collectors.toSet());
 
