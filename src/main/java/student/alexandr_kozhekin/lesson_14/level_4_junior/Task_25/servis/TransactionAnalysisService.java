@@ -1,6 +1,6 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_24.servis;
+package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_25.servis;
 
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_24.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_25.bean.Transaction;
 
 import java.util.Comparator;
 import java.util.List;
@@ -37,6 +37,14 @@ public class TransactionAnalysisService {
         return transactions.stream().
                 filter(transaction -> transaction.getYear() == 2011).
                 sorted(Comparator.comparing(Transaction::getValue)).
+                collect(Collectors.toList());
+
+    }
+
+    public List<Integer> fiendAllYearsTransaction(List<Transaction> transactions) {
+
+        return transactions.stream().
+                map(Transaction::getYear).
                 collect(Collectors.toList());
 
     }

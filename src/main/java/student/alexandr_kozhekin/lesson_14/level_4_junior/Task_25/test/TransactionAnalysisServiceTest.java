@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_3_junior.Task_24.test;
+package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_25.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_24.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_24.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_3_junior.Task_24.servis.TransactionAnalysisService;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_25.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_25.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_25.servis.TransactionAnalysisService;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -156,6 +156,28 @@ public class TransactionAnalysisServiceTest {
 
         assertEquals(expectedFirst, actualFirst);
         assertEquals(expectedSecond, actualSecond);
+
+    }
+
+    @Test
+    public void fiendAllYearsTransactionTest() {
+
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        List<Integer> expected = new ArrayList<>();
+
+        expected.add(transactionTestData.getTransactions().get(0).getYear());
+        expected.add(transactionTestData.getTransactions().get(1).getYear());
+        expected.add(transactionTestData.getTransactions().get(2).getYear());
+        expected.add(transactionTestData.getTransactions().get(3).getYear());
+        expected.add(transactionTestData.getTransactions().get(4).getYear());
+        expected.add(transactionTestData.getTransactions().get(5).getYear());
+
+        List<Integer> actual = transactionAnalysisService.
+                fiendAllYearsTransaction(transactionTestData.getTransactions());
+
+        assertEquals(expected, actual);
 
     }
 }
