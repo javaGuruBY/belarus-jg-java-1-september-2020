@@ -1,9 +1,12 @@
 package student.igor_kavalevski.lesson_9.level_2;
 
 import student.igor_kavalevski.lesson_9.level_1.Book;
+import student.igor_kavalevski.lesson_9.level_3.SearchCriteria;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 public interface BookDatabase {
 
@@ -24,4 +27,18 @@ public interface BookDatabase {
     void deleteByAuthor(String author);
 
     void deleteByTitle(String title);
+
+    List<Book> find(SearchCriteria searchCriteria);
+
+    Set<String> findUniqueAuthors();
+
+    Set<String> findUniqueTitles();
+
+    Set<Book> findUniqueBooks();
+
+    boolean contains(Book book);
+
+    Map<String, List<Book>> getAuthorToBooksMap();
+
+    Map<String, Integer> getEachAuthorBookCount();
 }

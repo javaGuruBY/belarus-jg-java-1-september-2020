@@ -1,10 +1,11 @@
 package student.igor_kavalevski.lesson_9.level_2;
 
 import student.igor_kavalevski.lesson_9.level_1.Book;
+import student.igor_kavalevski.lesson_9.level_3.SearchCriteria;
+import student.igor_kavalevski.lesson_9.level_3.TitleSearchCriteria;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class BookDatabaseImpl implements BookDatabase {
 
@@ -53,16 +54,16 @@ public class BookDatabaseImpl implements BookDatabase {
     @Override
     public List<Book> findByAuthor(String author) {
 
-        List<Book> Authors = new ArrayList<>();
+        List<Book> authors = new ArrayList<>();
 
-        for (int i = 0; i < books.size(); i++) {
+        for (Book book : books) {
 
-            if (author.equals(books.get(i).getAuthor())) {
+            if (author.equals(book.getAuthor())) {
 
-                Authors.add(books.get(i));
+                authors.add(book);
             }
         }
-        return Authors;
+        return authors;
     }
 
     @Override
@@ -70,11 +71,11 @@ public class BookDatabaseImpl implements BookDatabase {
 
         List<Book> titles = new ArrayList<>();
 
-        for (int i = 0; i < books.size(); i++) {
+        for (Book book : books) {
 
-            if (title.equals(books.get(i).getTitle())) {
+            if (title.equals(book.getTitle())) {
 
-                titles.add(books.get(i));
+                titles.add(book);
             }
         }
         return titles;
@@ -109,8 +110,77 @@ public class BookDatabaseImpl implements BookDatabase {
             }
         }
     }
-}
 
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria) {
+        List<Book> titleBook = new ArrayList<>();
+        for (Book book : books) {
+            if (searchCriteria.equals(new TitleSearchCriteria(book.getTitle()))) {
+                titleBook.add(book);
+            }
+        }
+        return titleBook;
+    }
+
+    @Override
+    public Set<String> findUniqueAuthors() {
+        return books.stream()
+                .map(Book::getAuthor)
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<String> findUniqueTitles() {
+        return books.stream()
+                .map(Book::getTitle)
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Book> findUniqueBooks() {
+        return new HashSet<>(books);
+    }
+
+    @Override
+    public boolean contains(Book book) {
+
+        for (Book value : books) {
+
+            if (value.equals(book)) {
+
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public Map<String, List<Book>> getAuthorToBooksMap() {
+
+        Map<String, List<Book>> authorOfBooks = new HashMap<>();
+
+        for (Book book : books) {
+            authorOfBooks.put(book.getAuthor(), findByAuthor(book.getAuthor()));
+        }
+        return authorOfBooks;
+    }
+
+
+    @Override
+    public Map<String, Integer> getEachAuthorBookCount() {
+
+        Map<String, Integer> authorBookUnique = new HashMap<>();
+
+        List<String> uniqueAuthor = new ArrayList<>(findUniqueAuthors());
+
+        for (String authors : uniqueAuthor) {
+
+            Set<Book> uniqueBook = new HashSet<>(findByAuthor(authors));
+            authorBookUnique.put(authors, uniqueBook.size());
+        }
+        return authorBookUnique;
+    }
+}
 
 
 
