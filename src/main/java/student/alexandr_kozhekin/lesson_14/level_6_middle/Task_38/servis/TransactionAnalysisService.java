@@ -1,7 +1,7 @@
-package student.alexandr_kozhekin.lesson_14.level_6_middle.Task_37.servis;
+package student.alexandr_kozhekin.lesson_14.level_6_middle.Task_38.servis;
 
-import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_37.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_37.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_38.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_38.bean.Transaction;
 
 import java.util.Comparator;
 import java.util.List;
@@ -113,6 +113,14 @@ public class TransactionAnalysisService {
     public String fiendAllTraderName(List<Transaction> transactions) {
 
         return fiendAllUniqueTrader(transactions).stream().
+                sorted().
+                collect(Collectors.joining(", "));
+
+    }
+
+    public String fiendAllTraderCity(List<Transaction> transactions){
+
+        return fiendAllUniqueCityTrader(transactions).stream().
                 sorted().
                 collect(Collectors.joining(", "));
 
