@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.test;
+package student.alexandr_kozhekin.lesson_14.level_6_middle.Task_37.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.servis.TransactionAnalysisService;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_37.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_37.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_37.servis.TransactionAnalysisService;
 
 import java.util.*;
 
@@ -330,6 +330,20 @@ public class TransactionAnalysisServiceTest {
 
         assertEquals(expectedFirst, actualFirst);
         assertEquals(expectedSecond, actualSecond);
+
+    }
+
+    @Test
+    public void fiendAllTraderNameTest() {
+
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        String expected = "Alan, Brian, Mario, Raoul";
+
+        String actual = transactionAnalysisService.fiendAllTraderName(transactionTestData.getTransactions());
+
+        assertEquals(expected, actual);
 
     }
 }
