@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.test;
+package student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.servis.TransactionAnalysisService;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.servis.TransactionAnalysisService;
 
 import java.util.*;
 
@@ -286,6 +286,28 @@ public class TransactionAnalysisServiceTest {
         assertEquals(true, actualFirst);
         assertEquals(true, actualSecond);
         assertEquals(false, actualThird);
+
+    }
+
+    @Test
+    public void fiendMaxTransactionValueTest() {
+
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        List<Transaction> emptyList = new ArrayList<>();
+
+        Optional<Integer> expectedFirst = Optional.of(transactionTestData.
+                getTransactions().get(1).getValue());
+        Optional<Integer> actualFirst = transactionAnalysisService.
+                fiendMaxTransactionValue(transactionTestData.getTransactions());
+
+        Optional<Integer> expectedSecond = Optional.empty();
+        Optional<Integer> actualSecond = transactionAnalysisService.
+                fiendMaxTransactionValue(emptyList);
+
+        assertEquals(expectedFirst, actualFirst);
+        assertEquals(expectedSecond, actualSecond);
 
     }
 }

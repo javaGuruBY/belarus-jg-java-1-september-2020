@@ -1,10 +1,11 @@
-package student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.servis;
+package student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.servis;
 
-import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.bean.Transaction;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -90,6 +91,14 @@ public class TransactionAnalysisService {
 
         return transactions.stream().
                 anyMatch(transaction -> transaction.getTrader().getCity().equalsIgnoreCase(cityCheck));
+
+    }
+
+    public Optional<Integer> fiendMaxTransactionValue (List<Transaction> transactions) {
+
+        return reversSortedTransactionForValue(transactions).stream().
+                findFirst().
+                map(Transaction::getValue);
 
     }
 }
