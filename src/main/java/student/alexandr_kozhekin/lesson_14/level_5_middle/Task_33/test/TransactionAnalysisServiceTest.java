@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.test;
+package student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.servis.TransactionAnalysisService;
+import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_33.servis.TransactionAnalysisService;
 
 import java.util.*;
 
@@ -271,15 +271,21 @@ public class TransactionAnalysisServiceTest {
     }
 
     @Test
-    public void fiendTraderHhoWorkInMilanTest() {
+    public void fiendTraderHhoWorkOnCityTest() {
 
         TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
         TransactionTestData transactionTestData = new TransactionTestData();
 
-        Boolean actual = transactionAnalysisService.
-                fiendTraderHhoWorkInMilan(transactionTestData.getTransactions());
+        Boolean actualFirst = transactionAnalysisService.
+                fiendTraderHhoWorkOnCity(transactionTestData.getTransactions(), "Milan");
+        Boolean actualSecond = transactionAnalysisService.
+                fiendTraderHhoWorkOnCity(transactionTestData.getTransactions(), "Cambridge");
+        Boolean actualThird = transactionAnalysisService.
+                fiendTraderHhoWorkOnCity(transactionTestData.getTransactions(), "London");
 
-        assertEquals(true, actual);
+        assertEquals(true, actualFirst);
+        assertEquals(true, actualSecond);
+        assertEquals(false, actualThird);
 
     }
 }
