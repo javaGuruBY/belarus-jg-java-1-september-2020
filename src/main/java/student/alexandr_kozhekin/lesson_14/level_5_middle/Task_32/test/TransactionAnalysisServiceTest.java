@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_30.test;
+package student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_30.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_30.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_30.servis.TransactionAnalysisService;
+import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.servis.TransactionAnalysisService;
 
 import java.util.*;
 
@@ -267,6 +267,19 @@ public class TransactionAnalysisServiceTest {
 
         assertEquals(expectedFirst, actualFirst);
         assertEquals(expectedSecond, actualSecond);
+
+    }
+
+    @Test
+    public void fiendTraderHhoWorkInMilanTest() {
+
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        Boolean actual = transactionAnalysisService.
+                fiendTraderHhoWorkInMilan(transactionTestData.getTransactions());
+
+        assertEquals(true, actual);
 
     }
 }

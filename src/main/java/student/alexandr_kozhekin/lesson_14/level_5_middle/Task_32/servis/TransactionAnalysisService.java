@@ -1,7 +1,7 @@
-package student.alexandr_kozhekin.lesson_14.level_4_junior.Task_30.servis;
+package student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.servis;
 
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_30.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_4_junior.Task_30.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_5_middle.Task_32.bean.Transaction;
 
 import java.util.Comparator;
 import java.util.List;
@@ -83,6 +83,13 @@ public class TransactionAnalysisService {
                 filter(transaction -> transaction.getTrader().getCity().equalsIgnoreCase(city)).
                 map(transaction -> transaction.getTrader().getName()).
                 collect(Collectors.toSet());
+
+    }
+
+    public Boolean fiendTraderHhoWorkInMilan(List<Transaction> transactions) {
+
+        return transactions.stream().
+                anyMatch(transaction -> transaction.getTrader().getCity().equalsIgnoreCase("Milan"));
 
     }
 }
