@@ -1,7 +1,7 @@
-package student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.servis;
+package student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.servis;
 
-import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.bean.Transaction;
 
 import java.util.Comparator;
 import java.util.List;
@@ -94,12 +94,21 @@ public class TransactionAnalysisService {
 
     }
 
-    public Optional<Integer> fiendMaxTransactionValue (List<Transaction> transactions) {
+    public Optional<Integer> fiendMaxTransactionValue(List<Transaction> transactions) {
 
         return reversSortedTransactionForValue(transactions).stream().
                 findFirst().
                 map(Transaction::getValue);
 
     }
+
+    public Optional<Integer> fiendMinTransactionValue(List<Transaction> transactions) {
+
+        return sortedTransactionForValue(transactions).stream().
+                findFirst().
+                map(Transaction::getValue);
+
+    }
+
 }
 

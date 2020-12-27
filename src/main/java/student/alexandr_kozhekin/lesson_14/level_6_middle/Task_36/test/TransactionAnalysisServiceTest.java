@@ -1,9 +1,9 @@
-package student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.test;
+package student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.test;
 
 import org.junit.Test;
-import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.bean.Trader;
-import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.bean.Transaction;
-import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_35.servis.TransactionAnalysisService;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.bean.Trader;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.bean.Transaction;
+import student.alexandr_kozhekin.lesson_14.level_6_middle.Task_36.servis.TransactionAnalysisService;
 
 import java.util.*;
 
@@ -301,6 +301,28 @@ public class TransactionAnalysisServiceTest {
                 getTransactions().get(1).getValue());
         Optional<Integer> actualFirst = transactionAnalysisService.
                 fiendMaxTransactionValue(transactionTestData.getTransactions());
+
+        Optional<Integer> expectedSecond = Optional.empty();
+        Optional<Integer> actualSecond = transactionAnalysisService.
+                fiendMaxTransactionValue(emptyList);
+
+        assertEquals(expectedFirst, actualFirst);
+        assertEquals(expectedSecond, actualSecond);
+
+    }
+
+    @Test
+    public void fiendMinTransactionValueTest() {
+
+        TransactionAnalysisService transactionAnalysisService = new TransactionAnalysisService();
+        TransactionTestData transactionTestData = new TransactionTestData();
+
+        List<Transaction> emptyList = new ArrayList<>();
+
+        Optional<Integer> expectedFirst = Optional.of(transactionTestData.
+                getTransactions().get(0).getValue());
+        Optional<Integer> actualFirst = transactionAnalysisService.
+                fiendMinTransactionValue(transactionTestData.getTransactions());
 
         Optional<Integer> expectedSecond = Optional.empty();
         Optional<Integer> actualSecond = transactionAnalysisService.
