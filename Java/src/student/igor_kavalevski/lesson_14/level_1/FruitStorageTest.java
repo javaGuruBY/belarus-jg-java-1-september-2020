@@ -3,8 +3,7 @@ package student.igor_kavalevski.lesson_14.level_1;
 import org.junit.Test;
 import student.igor_kavalevski.lesson_14.level_2.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -54,7 +53,7 @@ public class FruitStorageTest {
     }
 
     @Test
-    public void AppleHeavyWeightPredicate() {
+    public void appleHeavyWeightPredicate() {
 
         List<Apple> expected = new ArrayList<>();
 
@@ -67,7 +66,7 @@ public class FruitStorageTest {
     }
 
     @Test
-    public void AppleLightWeightPredicate() {
+    public void appleLightWeightPredicate() {
 
         List<Apple> expected = new ArrayList<>();
 
@@ -81,7 +80,7 @@ public class FruitStorageTest {
     }
 
     @Test
-    public void AppleGreenHeavyPredicate() {
+    public void appleGreenHeavyPredicate() {
 
         List<Apple> expected = new ArrayList<>();
 
@@ -93,4 +92,80 @@ public class FruitStorageTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void findApplesRedColorWithAnonClass() {
+
+        List<Apple> expected = new ArrayList<>();
+
+        expected.add(new Apple("red", 190));
+        expected.add(new Apple("red", 170));
+        expected.add(new Apple("red", 160));
+
+        List<Apple> actual = fruitStorage.findApples(expected, apple -> "red".equals(apple.getColor()));
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void findApplesGreenColorWithAnonClass() {
+
+        List<Apple> expected = new ArrayList<>();
+
+        expected.add(new Apple("green", 190));
+        expected.add(new Apple("green", 170));
+        expected.add(new Apple("green", 160));
+
+        List<Apple> actual = fruitStorage.findApples(expected, apple -> "green".equals(apple.getColor()));
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void findApplesHeavyWithAnonClass() {
+
+        List<Apple> expected = new ArrayList<>();
+
+        expected.add(new Apple("green", 190));
+        expected.add(new Apple("green", 170));
+        expected.add(new Apple("green", 160));
+
+        List<Apple> actual = fruitStorage.findApples(expected, apple -> 150 < apple.getWeight());
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void findApplesLightWithAnonClass() {
+
+        List<Apple> expected = new ArrayList<>();
+
+        expected.add(new Apple("green", 90));
+        expected.add(new Apple("green", 70));
+        expected.add(new Apple("green", 60));
+
+        List<Apple> actual = fruitStorage.findApples(expected, new ApplePredicate() {
+
+            @Override
+            public boolean test(Apple apple) {
+                return 150 > apple.getWeight();
+            }
+        });
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void findApplesLightWithAnonClassLambda() {
+
+        List<Apple> expected = new ArrayList<>();
+
+        expected.add(new Apple("green", 90));
+        expected.add(new Apple("green", 70));
+        expected.add(new Apple("green", 60));
+
+        List<Apple> actual = fruitStorage.findApples(expected, apple -> 150 > apple.getWeight());
+
+        assertEquals(expected, actual);
+    }
 }
+
