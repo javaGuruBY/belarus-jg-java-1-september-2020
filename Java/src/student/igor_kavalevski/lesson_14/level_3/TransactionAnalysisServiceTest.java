@@ -186,6 +186,74 @@ public class TransactionAnalysisServiceTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void isAnyTraderBasedOnMilanTest() {
+
+        List<Transaction> transaction = transData.getTransactions();
+
+        boolean actual = trans.isAnyTraderBasedOnMilan(transaction);
+
+        assertTrue(actual);
+    }
+
+    @Test
+    public void isAnyTraderBasedOnCityTest() {
+
+        List<Transaction> transaction = transData.getTransactions();
+
+        boolean actual = trans.isAnyTraderBasedOnCity(transaction, "Cambridge");
+
+        assertTrue(actual);
+    }
+
+    @Test
+    public void theGreatestValueFromTransactionTest() {
+
+        Optional<Integer> expected = Optional.of((transData.getTransactions().get(1).getValue()));
+
+        List<Transaction> transaction = transData.getTransactions();
+
+        Optional<Integer> actual = trans.theGreatestValueFromTransaction(transaction);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void theMinValueFromTransactionTest() {
+
+        Optional<Integer> expected = Optional.of((transData.getTransactions().get(0).getValue()));
+
+        List<Transaction> transaction = transData.getTransactions();
+
+        Optional<Integer> actual = trans.theMinValueFromTransaction(transaction);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void namesTraderTest() {
+
+        List<Transaction> transaction = transData.getTransactions();
+
+        String expected = "Alan,Brian,Mario,Raoul";
+
+        String actual = trans.namesTrader(transaction);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void uniqueCityTradersTest() {
+
+        List<Transaction> transaction = transData.getTransactions();
+
+        String expected = "Cambridge,Milan";
+
+        String actual = trans.uniqueCityTraders(transaction);
+
+        assertEquals(expected, actual);
+    }
 }
 
 

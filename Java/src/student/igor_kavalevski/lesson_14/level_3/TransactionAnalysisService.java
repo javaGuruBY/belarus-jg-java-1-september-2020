@@ -2,6 +2,7 @@ package student.igor_kavalevski.lesson_14.level_3;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -90,5 +91,47 @@ public class TransactionAnalysisService {
                 .filter(s -> s.getCity().equals(cityFind))
                 .map(Trader::getName)
                 .collect(Collectors.toSet());
+    }
+
+    public Boolean isAnyTraderBasedOnMilan(List<Transaction> transactions) {
+
+        return transactions.stream()
+                .anyMatch(transaction -> transaction.getTrader().getCity().equals("Milan"));
+    }
+
+    public Boolean isAnyTraderBasedOnCity(List<Transaction> transactions, String isAnyTraderFromCity) {
+
+        return transactions.stream()
+                .anyMatch(transaction -> transaction.getTrader().getCity().equals(isAnyTraderFromCity));
+    }
+
+    public Optional<Integer> theGreatestValueFromTransaction (List<Transaction> transactions) {
+
+        return transactions.stream()
+                .sorted(Comparator.comparing(Transaction::getValue).reversed())
+                .findFirst()
+                .map(Transaction::getValue);
+    }
+
+    public Optional<Integer> theMinValueFromTransaction (List<Transaction> transactions) {
+
+        return transactions.stream()
+                .sorted(Comparator.comparing(Transaction::getValue))
+                .findFirst()
+                .map(Transaction::getValue);
+    }
+
+    public String namesTrader(List<Transaction> transactions) {
+
+        return findNameUniqueTraders(transactions).stream()
+                .sorted()
+                .collect(Collectors.joining(","));
+    }
+
+    public String uniqueCityTraders(List<Transaction> transactions) {
+
+        return findCityUniqueTraders(transactions).stream()
+                .sorted()
+                .collect(Collectors.joining(","));
     }
 }
