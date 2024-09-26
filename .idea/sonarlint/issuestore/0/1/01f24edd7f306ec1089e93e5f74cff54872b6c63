@@ -1,0 +1,12 @@
+
+V
+java:S1144"6Remove this unused private "numberOfWordCells" method.(ÍÎÖòüÿÿÿÿ8³şñÎÚ.
+X
+java:S1197"8Move the array designator from the variable to the type.(Úü™ÿÿÿÿÿ8êøÎÚ.
+S	java:S106"9Replace this use of System.out or System.err by a logger.(æ–ªñ8Í·ıÎÚ.
+H	java:S108")Either remove or fill this block of code.(óËĞ‡øÿÿÿÿ8¦¦ÙÅÚ.
+M
+java:S1144"-Remove this unused private "numberOf" method.(«™¨Öøÿÿÿÿ8³şñÎÚ.
+M
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8•¶¿šÚ.
+r	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Š—–äüÿÿÿÿ
